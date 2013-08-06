@@ -4,7 +4,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(blink-cursor-mode nil)
- '(custom-safe-themes (quote ("60a2ebd7effefeb960f61bc4772afd8b1ae4ea48fae4d732864ab9647c92093a" "2ff493cb70e33443140cd5286553d994f25478182a8c20382895f452666c20c6" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "9f443833deb3412a34d2d2c912247349d4bd1b09e0f5eaba11a3ea7872892000" "52b5da0a421b020e2d3429f1d4929089d18a56e8e43fe7470af2cea5a6c96443" default)))
+ '(custom-safe-themes (quote ("f52632eabbcbdccfb5070dfa864fd8f6cab7ad5db5bb027a385613fe955a477d" "6872b9ccad2ef1b4a12644f37169eade1b567f53b18737d6914168ef3f02a959" "fc6e906a0e6ead5747ab2e7c5838166f7350b958d82e410257aeeb2820e8a07a" "60a2ebd7effefeb960f61bc4772afd8b1ae4ea48fae4d732864ab9647c92093a" "2ff493cb70e33443140cd5286553d994f25478182a8c20382895f452666c20c6" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "9f443833deb3412a34d2d2c912247349d4bd1b09e0f5eaba11a3ea7872892000" "52b5da0a421b020e2d3429f1d4929089d18a56e8e43fe7470af2cea5a6c96443" default)))
  '(edts-man-root "~/.emacs.d/edts/doc/R16B01"))
 
 
@@ -20,6 +20,10 @@
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 (setq inhibit-startup-message t)
+
+(autopair-global-mode)
+(global-rainbow-delimiters-mode)
+(global-hl-line-mode)
 
 ;; scroll one line at a time (less "jumpy" than defaults)
 
@@ -168,6 +172,7 @@
 (setq org-directory "~/org")
 (setq org-default-notes-file (concat org-directory "/inbox.org"))
 (define-key global-map "\C-cc" 'org-capture)
+(setq org-log-done t)
 
 
 ;; (global-set-key TODO something lost -> need to start cersion control
