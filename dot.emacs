@@ -24,7 +24,7 @@
 (autopair-global-mode)
 (global-rainbow-delimiters-mode)
 (global-hl-line-mode)
-
+(ido-vertical-mode)
 ;; scroll one line at a time (less "jumpy" than defaults)
 
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
@@ -33,7 +33,7 @@
 (setq scroll-step 1) ;; keyboard scroll one line at a time
 
 ;; (set-default-font “Lekton-9”)
-(set-face-attribute 'default nil :font "DejaVu Sans Mono-8")
+(set-face-attribute 'default nil :font "DejaVu Sans Mono-7.7")
 
 (load-theme 'molokai)
 
@@ -174,6 +174,11 @@
 (define-key global-map "\C-cc" 'org-capture)
 (setq org-log-done t)
 
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+
+(require 'org-journal)
+(setq org-journal-dir "~/org/journal/")
 
 ;; (global-set-key TODO something lost -> need to start cersion control
 
@@ -181,7 +186,7 @@
 
 (add-to-list 'load-path "~/opt/edts")
 (require 'edts-start)
-
+(setq erlang-indent-level 2)
 ;; (require 'erlang-flymake)
 ;; diabeld, becouse it wasn't usefull
 ;; and it was imposible to set-up (dependencis)
