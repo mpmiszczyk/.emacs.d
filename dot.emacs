@@ -173,7 +173,7 @@
 (setq org-default-notes-file (concat org-directory "/inbox.org"))
 (define-key global-map "\C-cc" 'org-capture)
 (setq org-log-done t)
-n
+
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 
@@ -184,7 +184,10 @@ n
 (require 'org-journal)
 (setq org-journal-dir "~/org/journal/")
 
-(setq org-agenda-files (list "~/org/inbox.org") )
+(setq org-agenda-files
+      (mapcar 'abbreviate-file-name
+              (split-string
+               (shell-command-to-string "find ~/org -name \"*.org\"") "\n")))
 
 ;; (global-set-key TODO something lost -> need to start cersion control
 
