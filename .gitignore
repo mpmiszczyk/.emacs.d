@@ -1,8 +1,14 @@
 # elisp compiled files
 *.elc
+# temp files from
+*~
 
 # place for elapa packages
 elpa/
 
 # I'm not shure what to do with this one
 /auto-save-list
+
+
+# Internal data files for edts plugin
+edts/
