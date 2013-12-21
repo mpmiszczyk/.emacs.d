@@ -200,7 +200,7 @@
 
 
 
-(add-to-list 'load-path "~/opt/edts")
+(add-to-list 'load-path "~/.emacs.d/opt/edts")
 (require 'edts-start)
 (setq erlang-indent-level 2)
 ;; (require 'erlang-flymake)
