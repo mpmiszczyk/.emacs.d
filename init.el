@@ -1,3 +1,14 @@
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+(scroll-bar-mode -1)
+
+(setq inhibit-startup-message t)
+
+;; (set-default-font “Lekton-9”)
+(set-face-attribute 'default nil :font "DejaVu Sans Mono-7.7")
+
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -16,15 +27,11 @@
              '("melpa" . "http://melpa.milkbox.net/packages/") )
 (package-initialize)
 
+(load-theme 'molokai)
 
 (elpy-enable)
 
 
-
-(tool-bar-mode -1)
-(menu-bar-mode -1)
-(scroll-bar-mode -1)
-(setq inhibit-startup-message t)
 
 (autopair-global-mode)
 (global-rainbow-delimiters-mode)
@@ -39,10 +46,6 @@
 (setq mouse-wheel-follow-mouse nil) ;; scroll window under mouse
 (setq scroll-step 1) ;; keyboard scroll one line at a time
 
-;; (set-default-font “Lekton-9”)
-(set-face-attribute 'default nil :font "DejaVu Sans Mono-7.7")
-
-(load-theme 'molokai)
 
 (setq default-tab-width 2)
 (setq-default indent-tabs-mode nil)
