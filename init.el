@@ -147,7 +147,7 @@
 (add-to-list 'load-path "~/.emacs.d/opt/edts")
 (require 'edts-start)
 
-(add-to-list 'load-path "/usr/local/lib/erlang/lib/wrangler-1.1.01/elisp")
+(add-to-list 'load-path "~/.emacs.d/opt/wrangler/elisp")
 (require 'wrangler)
 
 
