@@ -146,6 +146,11 @@
 
 (add-to-list 'load-path "~/.emacs.d/opt/edts")
 (require 'edts-start)
+
+(add-to-list 'load-path "/usr/local/lib/erlang/lib/wrangler-1.1.01/elisp")
+(require 'wrangler)
+
+
 (setq erlang-indent-level 2)
 ;; (require 'erlang-flymake)
 ;; diabeld, becouse it wasn't usefull
