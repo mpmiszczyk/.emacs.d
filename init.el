@@ -157,6 +157,9 @@
 (setq org-completion-use-ido t)
 (setq ido-everywhere t)
 
+; normal yank will act as smart one in org-mode
+(setq org-yank-adjusted-subtrees t)
+
 
 
 ;; (global-set-key TODO something lost -> need to start cersion control
