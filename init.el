@@ -177,71 +177,8 @@
 
 
 (setq erlang-indent-level 2)
-;; (require 'erlang-flymake)
-;; diabeld, becouse it wasn't usefull
-;; and it was imposible to set-up (dependencis)
 
 
-;; (add-hook 'erlang-mode '(lambda () 
-;;                           ( hs-minor-mode ) 
-;;                           ;;TODO automatyczne włączanie modaoraz
-;;                           ;;indentowanie wszystkich kometarzy
-;;                           (dired-omit-mode 1)
-;;                           ;; TODO trzeba dodać nadpisywanie glabalnych
-;;                           ;; key; bo normalnie "M-m" używam do
-;;                           ;; wywoływania make 
-;;                           (local-set-key (kbd  "M-m")
-;;                                          'edts-code-compile-and-display ) 
-;;                           (local-set-key (kbd
-;;                                           "M-r") 'edts-find-local-function) ))
-
-;; (add-hook 'erlang-mode-hook '(lambda ()
-;;       (local-set-key (kbd "RET") 'newline-and-indent))
-;;           )
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  NOTES  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;; auto-compleate to "\M-/"
-;;
-;; TODO global-hl-line-mode
-;; TODO autopair-global-mode
-;; TODO global-rainbow-mode
-;; TODO global-hs-mode
-;; TODO better buffers from bambucha
-;; TODO hs-mode
-;; DONE wright font
-;; TODO czerwone komentarze; bo takie są zupełnie nie czytelne
-
-;; TODO doinstalowac:
-;; hs-mode
-;; zaznaczanie coraz wiekszych
-;;
-;; 
-
-;; Działa równierz przechodzenie pomiędzy buforami przy pomocy
-;; nex/prev na klawiaturze (to te dwa trzyciski koło strzałek
-;;
-;; "M-Q automatycznie wypełnia zadane linikji do danej długości;
-;; przydatne przy komentarzach ale przy zwykłym kodzie mocno psuje
-;; strykturę
-;;
-;; "M-j" indentuje nową linię w komentachach,
-;; "C-j" nowa linia i indent wszędzie
-;;
-;; istnieje polecenie w edts które pozwala na kopiwanie argumentów
-;; powtarzanej funkcji, można by przypisać, lub przynajmniej o tym
-;; pamiętać
-;;
-;;
-;; "C-x k" zabija daby buffer
-;; i jeszcze zamin zapomnę, magit jest super, org jest powyżej
-;; oczekiwań; emacs mnie wicągnoł na całego.
-;;
-;; 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
