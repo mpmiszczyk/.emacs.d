@@ -154,6 +154,8 @@
 ; Targets complete directly with IDO
 (setq org-outline-path-complete-in-steps nil)
 
+(setq org-refile-allow-creating-parent-nodes nil)
+
 ; Use IDO for both buffer and file completion and ido-everywhere to t
 (setq org-completion-use-ido t)
 (setq ido-everywhere t)
