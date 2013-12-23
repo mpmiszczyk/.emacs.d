@@ -143,6 +143,22 @@
               (split-string
                (shell-command-to-string "find ~/org -name \"*.org\" -o -name \"*.org_archive\""  ) "\n")))
 
+; Targets include this file and any file contributing to the agenda - up to 9 levels deep
+(setq org-refile-targets (quote ((nil :maxlevel . 2)
+                                 (org-agenda-files :maxlevel . 9))))
+
+; Use full outline paths for refile targets - we file directly with IDO
+(setq org-refile-use-outline-path t)
+
+; Targets complete directly with IDO
+(setq org-outline-path-complete-in-steps nil)
+
+; Use IDO for both buffer and file completion and ido-everywhere to t
+(setq org-completion-use-ido t)
+(setq ido-everywhere t)
+
+
+
 ;; (global-set-key TODO something lost -> need to start cersion control
 
 
