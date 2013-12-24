@@ -114,8 +114,8 @@
 (global-set-key (kbd "M-?") 'comment-or-uncomment-region)
 
 (global-set-key "\M-," 'pop-to-mark-command)
-(global-set-key "\M-w" 'er/expand-region)
-(global-set-key "\M-W" 'er/contract-region)
+(global-set-key "\M-]" 'er/expand-region)
+(global-set-key "\M-[" 'er/contract-region)
 
 (global-set-key "\M-=" 'hs-toggle-hiding)
 (global-set-key (kbd "C-M-=") 'hs-hide-all) 
