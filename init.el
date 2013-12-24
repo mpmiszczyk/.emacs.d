@@ -135,7 +135,8 @@
           '(lambda ()
              (define-key org-mode-map [(control tab)] nil)
              (auto-fill-mode)
-             (org-indent-mode)))
+             (org-indent-mode)
+             (rainbow-delimiters-mode-disable)))
 
 (require 'org-journal)
 (setq org-journal-dir "~/org/journal/")
