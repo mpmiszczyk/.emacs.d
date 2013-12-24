@@ -38,7 +38,6 @@
 (global-rainbow-delimiters-mode)
 (ido-vertical-mode)
 
-(setq org-pomodoro-play-ticking-sounds t)
 
 ;; scroll one line at a time (less "jumpy" than defaults)
 
@@ -138,6 +137,8 @@
 
 (require 'org-journal)
 (setq org-journal-dir "~/org/journal/")
+
+(setq org-pomodoro-play-ticking-sounds t)
 
 (setq org-agenda-files   
       (mapcar 'abbreviate-file-name
