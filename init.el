@@ -32,6 +32,9 @@
 
 (elpy-enable)
 
+(require 'google-translate)
+(setq google-translate-default-source-language "pl")
+(setq google-translate-default-target-language "en")
 
 
 (autopair-global-mode)
