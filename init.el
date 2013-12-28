@@ -36,14 +36,14 @@
 (setq google-translate-default-source-language "pl")
 (setq google-translate-default-target-language "en")
 
-(global-set-key (kbd "C-c C-t")
+(global-set-key (kbd "C-c C-t C-t")
                 'google-translate-at-point)
-(global-set-key (kbd "C-c t")
+(global-set-key (kbd "C-c C-t t")
                 'google-translate-query-translate)
 
-(global-set-key (kbd "C-c C-r")
+(global-set-key (kbd "C-c C-t C-r")
                 'google-translate-at-point-reverse)
-(global-set-key (kbd "C-c r")
+(global-set-key (kbd "C-c C-t r")
                 'google-translate-query-reverse)
 
 
