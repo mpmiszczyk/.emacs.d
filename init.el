@@ -36,6 +36,16 @@
 (setq google-translate-default-source-language "pl")
 (setq google-translate-default-target-language "en")
 
+(global-set-key (kbd "C-c C-t")
+                'google-translate-at-point)
+(global-set-key (kbd "C-c t")
+                'google-translate-query-translate)
+
+(global-set-key (kbd "C-c C-r")
+                'google-translate-at-point-reverse)
+(global-set-key (kbd "C-c r")
+                'google-translate-query-reverse)
+
 
 (autopair-global-mode)
 (global-rainbow-delimiters-mode)
