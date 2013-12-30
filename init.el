@@ -49,6 +49,7 @@
 
 (autopair-global-mode)
 (global-rainbow-delimiters-mode)
+(global-hl-line-mode)
 (ido-vertical-mode)
 
 
