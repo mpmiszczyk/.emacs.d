@@ -44,7 +44,7 @@
 (global-set-key (kbd "C-c t R")
                 'google-translate-at-point-reverse)
 (global-set-key (kbd "C-c t r")
-                'google-translate-query-reverse)
+                'google-translate-query-translate-reverse)
 
 
 (autopair-global-mode)
