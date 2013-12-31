@@ -6,4 +6,4 @@
 	url = https://github.com/RefactoringTools/wrangler.git
 [submodule "themes/zenburn"]
 	path = themes/zenburn
-	url = https://github.com/bbatsov/zenburn-emacs.git
+	url = https://github.com/mpmiszczyk/zenburn-emacs.git
