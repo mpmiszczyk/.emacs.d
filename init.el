@@ -163,6 +163,30 @@
              (org-indent-mode)
              (rainbow-delimiters-mode-disable)))
 
+
+
+(defun org-clock-out-on-exit ()
+  "Closes active clock when exiting emacs;
+
+
+Still needs some work done; what important,
+is saving all AFTER  clocking out.
+
+I still need some functionality to handle
+not eat defined org-clock-out function; which 
+is loaded dynamiclly"
+  (org-clock-out nil t)
+  (smex-save-to-file))
+
+(defun cleaup-kill-hook ()
+  "Temporary function; typo intencional"
+  (interactive)
+  (remove-hook 'kill-emacs-hook 'org-clock-out-on-exit))
+
+(add-hook 'kill-emacs-hook 'org-clock-out-on-exit)
+
+
+
 (require 'org-journal)
 (setq org-journal-dir "~/org/journal/")
 
