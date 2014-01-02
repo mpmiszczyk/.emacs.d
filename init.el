@@ -218,7 +218,7 @@ is loaded dynamiclly"
 ; normal yank will act as smart one in org-mode
 (setq org-yank-adjusted-subtrees t)
 
-(add-to-list 'org-modules 'org-habit)
+;; (add-to-list 'org-modules 'org-habit)
 
 
 ;; (global-set-key TODO something lost -> need to start cersion control
