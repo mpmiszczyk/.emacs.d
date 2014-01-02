@@ -168,6 +168,8 @@
 
 (setq org-pomodoro-play-ticking-sounds t)
 
+(steq org-clock-into-drawer t)
+
 (setq org-agenda-files   
       (mapcar 'abbreviate-file-name
               (split-string
