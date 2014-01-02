@@ -192,7 +192,7 @@ is loaded dynamiclly"
 
 (setq org-pomodoro-play-ticking-sounds t)
 
-(steq org-clock-into-drawer t)
+(setq org-clock-into-drawer t)
 
 (setq org-agenda-files   
       (mapcar 'abbreviate-file-name
@@ -219,9 +219,6 @@ is loaded dynamiclly"
 (setq org-yank-adjusted-subtrees t)
 
 ;; (add-to-list 'org-modules 'org-habit)
-
-
-;; (global-set-key TODO something lost -> need to start cersion control
 
 
 
