@@ -143,8 +143,6 @@
 (add-to-list 'load-path "~/.emacs.d/opt/edts")
 (require 'edts-start)
 
-(add-to-list 'load-path "~/.emacs.d/opt/wrangler/elisp")
-(require 'wrangler)
 
 
 (setq erlang-indent-level 2)
