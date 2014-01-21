@@ -24,7 +24,9 @@
     dash
     epc
     epl
+    elpy
     erlang
+    expand-region
     f
     flycheck
     google-translate
