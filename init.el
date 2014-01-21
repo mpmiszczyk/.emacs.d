@@ -28,13 +28,9 @@
  '(vc-annotate-very-old-color "#DC8CC3"))
 
 
-(require 'package)
-(add-to-list 'package-archives 
-             '("marmalade" ."http://marmalade-repo.org/packages/") )
-(add-to-list 'package-archives 
-             '("melpa" . "http://melpa.milkbox.net/packages/") )
-(package-initialize)
+(add-to-list 'load-path "~/.emacs.d")
 
+(load "conf-package")
 
 
 (elpy-enable)
