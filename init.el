@@ -78,8 +78,7 @@
 (setq tramp-syntax 'url)
 (setq tramp-default-method "ssh")
 
-(add-to-list 'load-path "~/.emacs.d")
-(require 'conf-mu4e)
+;; (require 'conf-mu4e)
 
 (require 'tramp)
 
