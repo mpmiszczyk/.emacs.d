@@ -16,13 +16,9 @@
 (load custom-file)
 
 
-(require 'package)
-(add-to-list 'package-archives 
-             '("marmalade" ."http://marmalade-repo.org/packages/") )
-(add-to-list 'package-archives 
-             '("melpa" . "http://melpa.milkbox.net/packages/") )
-(package-initialize)
+(add-to-list 'load-path "~/.emacs.d")
 
+(load "conf-package")
 
 
 (elpy-enable)
@@ -70,8 +66,7 @@
 (setq tramp-syntax 'url)
 (setq tramp-default-method "ssh")
 
-(add-to-list 'load-path "~/.emacs.d")
-(require 'conf-mu4e)
+;; (require 'conf-mu4e)
 
 (require 'tramp)
 
