@@ -5,7 +5,7 @@
 (setq inhibit-startup-message t)
 
 ;; (set-default-font “Lekton-9”)
-(set-face-attribute 'default nil :font "DejaVu Sans Mono-7.7")
+(set-face-attribute 'default nil :font "DejaVu Sans Mono-8.7")
 
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/zenburn")
