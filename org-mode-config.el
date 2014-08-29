@@ -32,7 +32,7 @@ is loaded dynamiclly"
 
 
 (require 'org-journal)
-(setq org-journal-dir "~/org/journal/")
+(setq org-journal-dir (concat org-directory "/journal/"))
 
 (setq org-pomodoro-play-ticking-sounds t)
 
