@@ -11,7 +11,8 @@
              (define-key org-mode-map [(control tab)] nil)
              (auto-fill-mode)
              (org-indent-mode)
-             (rainbow-delimiters-mode-disable)))
+             (rainbow-delimiters-mode-disable)
+             (add-hook 'kill-emacs-hook 'org-clock-out-on-exit)))
 
 
 
@@ -27,13 +28,6 @@ not eat defined org-clock-out function; which
 is loaded dynamiclly"
   (org-clock-out nil t)
   (smex-save-to-file))
-
-(defun cleaup-kill-hook ()
-  "Temporary function; typo intencional"
-  (interactive)
-  (remove-hook 'kill-emacs-hook 'org-clock-out-on-exit))
-
-(add-hook 'kill-emacs-hook 'org-clock-out-on-exit)
 
 
 
