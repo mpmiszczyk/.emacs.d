@@ -12,3 +12,7 @@ elpa/
 
 # Internal data files for edts plugin
 edts/
+/custom.el
+/bookmarks
+/tramp
+/url/
