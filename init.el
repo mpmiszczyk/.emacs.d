@@ -40,7 +40,6 @@
 
 
 (autopair-global-mode)
-(global-rainbow-delimiters-mode)
 (global-hl-line-mode)
 (ido-vertical-mode)
 
@@ -142,6 +141,10 @@
 (add-to-list 'load-path "~/.emacs.d/opt/edts")
 (require 'edts-start)
 
+
+;; TODO add to other modes with function
+(add-hook 'erlang-mode-hook
+          'rainbow-delimiters-mode)
 
 
 (setq erlang-indent-level 2)
