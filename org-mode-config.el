@@ -27,7 +27,7 @@ I still need some functionality to handle
 not eat defined org-clock-out function; which 
 is loaded dynamiclly"
   (org-clock-out nil t)
-  (smex-save-to-file))
+  (save-some-buffers))
 
 
 
