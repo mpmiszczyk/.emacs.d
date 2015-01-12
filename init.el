@@ -8,21 +8,17 @@
 (set-face-attribute 'default nil :font "DejaVu Sans Mono-8")
 
 
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/zenburn")
-(load-theme 'zenburn 'no-confirm)
-
-
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
 
-
-(add-to-list 'load-path "~/.emacs.d")
+(add-to-list 'load-path "~/.emacs.d/lisp")
 
 (load "conf-package")
+;(elpy-enable)
 
+(load-theme 'zenburn)
 
-(elpy-enable)
 
 (require 'google-translate)
 (setq google-translate-default-source-language "pl")

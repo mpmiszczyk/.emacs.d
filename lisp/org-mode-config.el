@@ -35,6 +35,7 @@ is loaded dynamiclly"
 (setq org-journal-dir (concat org-directory "/journal/"))
 
 (setq org-pomodoro-play-ticking-sounds t)
+(setq org-pomodoro-sound-args "-v 0.1")
 
 (setq org-clock-into-drawer t)
 
