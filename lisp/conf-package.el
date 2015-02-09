@@ -48,10 +48,12 @@
     s
     smex
     ssh
+    vagrant-tramp
     w3
     w3m
     yaml-mode
-    yasnippet )
+    yasnippet
+    zenburn-theme)
   "Packages which should be installed upon launch")
 
 (dolist (p required-packages)
