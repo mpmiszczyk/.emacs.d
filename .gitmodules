@@ -1,6 +1,3 @@
-[submodule "opt/edts"]
-	path = opt/edts
-	url = https://github.com/tjarvstrand/edts
 [submodule "opt/wrangler"]
 	path = opt/wrangler
 	url = https://github.com/RefactoringTools/wrangler.git

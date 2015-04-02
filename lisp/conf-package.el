@@ -22,6 +22,7 @@
     autopair
     color-theme
     dash
+    edts
     epc
     epl
     elpy
