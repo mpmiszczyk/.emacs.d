@@ -107,7 +107,7 @@
 
 (global-set-key "\M-m"   'compile)  ;; m is for make; TODO oraz
 ;; przydało by się rozdzielić
-;; automatyczny make z pierszką
+;; automatyczny make z pierwszą
 ;; opcją (lub ostatnią) i make i
 ;; wywoływaną opcją
 (global-set-key [M-down] 'next-error)
@@ -125,9 +125,6 @@
 (global-set-key "\M-," 'pop-to-mark-command)
 (global-set-key "\M-]" 'er/expand-region)
 (global-set-key "\M-[" 'er/contract-region)
-
-(global-set-key "\M-=" 'hs-toggle-hiding)
-(global-set-key (kbd "C-M-=") 'hs-hide-all) 
 
 
 (require 'org-mode-config)
