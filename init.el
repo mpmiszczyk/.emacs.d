@@ -5,7 +5,7 @@
 (setq inhibit-startup-message t)
 
 ;; (set-default-font “Lekton-9”)
-(set-face-attribute 'default nil :font "DejaVu Sans Mono-8")
+(set-face-attribute 'default nil :font "DejaVu Sans Mono-9")
 
 
 (setq custom-file "~/.emacs.d/custom.el")
