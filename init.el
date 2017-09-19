@@ -43,6 +43,13 @@
                 'google-translate-query-translate-reverse)
 
 
+;; Sclala dirty intro FIXME
+(use-package ensime
+  :ensure t
+  :pin melpa-stable)
+
+
+
 (autopair-global-mode)
 (global-hl-line-mode)
 (ido-vertical-mode)
