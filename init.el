@@ -46,7 +46,16 @@
 ;; Sclala dirty intro FIXME
 (use-package ensime
   :ensure t
-  :pin melpa-stable)
+  :pin melpa)
+
+(use-package sbt-mode
+  :pin melpa)
+
+(use-package scala-mode
+  :pin melpa)
+
+(setq ensime-startup-notification nil)
+(setq ensime-startup-snapshot-notification nil)
 
 
 
