@@ -26,6 +26,7 @@
 ;(elpy-enable)
 
 (load-theme 'zenburn)
+(load "conf-elfeed")
 
 
 (require 'google-translate)
@@ -175,6 +176,8 @@
  )
 
 
+
+
 (defun toggle-window-split ()
   (interactive)
   (if (= (count-windows) 2)
@@ -201,3 +204,7 @@
 	  (if this-win-2nd (other-window 1))))))
 
 (global-set-key (kbd "C-x |") 'toggle-window-split)
+
+
+(magit-define-popup-option 'magit-commit-popup
+  ?D "Override the author date" "--date=" #'read-from-minibuffer)
