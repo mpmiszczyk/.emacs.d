@@ -130,11 +130,6 @@
                                         ;(require 'lfe-start)
 
 
-(global-set-key "\M-m"   'compile)  ;; m is for make; TODO oraz
-;; przydało by się rozdzielić
-;; automatyczny make z pierwszą
-;; opcją (lub ostatnią) i make i
-;; wywoływaną opcją
 (global-set-key [M-down] 'next-error)
 (global-set-key [M-up]   '(lambda ()
                             (interactive)
