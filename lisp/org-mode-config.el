@@ -3,6 +3,8 @@
 (define-key global-map "\C-cc" 'org-capture)
 (setq org-log-done t)
 
+(setq org-drill-learn-fraction 0.39)
+
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 
@@ -34,6 +36,7 @@ is loaded dynamiclly"
 (require 'org-journal)
 (setq org-journal-dir (concat org-directory "/journal/"))
 
+
 (setq org-pomodoro-play-ticking-sounds t)
 (setq org-pomodoro-sound-args "-v 0.1")
 
@@ -64,7 +67,6 @@ is loaded dynamiclly"
 (setq org-yank-adjusted-subtrees t)
 
 ;; (add-to-list 'org-modules 'org-habit)
-
 
 
 (provide 'org-mode-config)
