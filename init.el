@@ -28,6 +28,10 @@
 (load-theme 'zenburn)
 (load "conf-elfeed")
 
+;; all links are opened in chrome
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "google-chrome-stable")
+
 
 (require 'google-translate)
 (setq google-translate-default-source-language "pl")
