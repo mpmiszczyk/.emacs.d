@@ -27,6 +27,7 @@
 
 (load-theme 'zenburn)
 (load "conf-elfeed")
+(load "conf-js")
 
 ;; all links are opened in chrome
 (setq browse-url-browser-function 'browse-url-generic
