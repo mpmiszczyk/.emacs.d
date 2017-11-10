@@ -144,9 +144,6 @@
 (global-set-key (kbd "C-'") 'ace-jump-buffer)
 
 
-(global-set-key (kbd "M-?") 'comment-or-uncomment-region)
-
-(global-set-key "\M-," 'pop-to-mark-command)
 (global-set-key "\M-]" 'er/expand-region)
 (global-set-key "\M-[" 'er/contract-region)
 
