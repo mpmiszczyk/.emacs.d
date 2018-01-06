@@ -26,7 +26,7 @@ Still needs some work done; what important,
 is saving all AFTER  clocking out.
 
 I still need some functionality to handle
-not eat defined org-clock-out function; which 
+not eat defined org-clock-out function; which
 is loaded dynamiclly"
   (org-clock-out nil t)
   (save-some-buffers))
@@ -42,10 +42,13 @@ is loaded dynamiclly"
 
 (setq org-clock-into-drawer t)
 
-(setq org-agenda-files   
-      (mapcar 'abbreviate-file-name
-              (split-string
-               (shell-command-to-string "find ~/Dropbox/org -name \"*.org\" -o -name \"*.org_archive\""  ) "\n")))
+(defun set-org-agenda-files ()
+  (interactive)
+  (setq org-agenda-files
+        (mapcar 'abbreviate-file-name
+                (split-string
+                 (shell-command-to-string
+                  "find ~/Dropbox/org -name \"*.org\" -o -name \"*.org_archive\""  ) "\n"))))
 
 ; Targets include this file and any file contributing to the agenda - up to 9 levels deep
 (setq org-refile-targets (quote ((nil :maxlevel . 2)
