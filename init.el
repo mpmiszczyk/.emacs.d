@@ -203,5 +203,5 @@
 (global-set-key (kbd "C-x |") 'toggle-window-split)
 
 
-(magit-define-popup-option 'magit-commit-popup
-  ?D "Override the author date" "--date=" #'read-from-minibuffer)
+;; (magit-define-popup-option 'magit-commit-popup
+;;   ?D "Override the author date" "--date=" #'read-from-minibuffer)
