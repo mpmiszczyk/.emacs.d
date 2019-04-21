@@ -37,7 +37,7 @@
     f
     flycheck
     google-translate
-    hide-comnt
+    ;; hide-comnt
     ido-vertical-mode
     idomenu
     iedit
@@ -46,7 +46,7 @@
     nose
     org
     org-journal
-    org-magit
+    ;; org-magit
     org-pomodoro
     pkg-info
     popup
