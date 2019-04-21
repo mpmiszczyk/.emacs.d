@@ -34,19 +34,16 @@
       browse-url-generic-program "google-chrome-stable")
 
 
-(require 'google-translate)
-(setq google-translate-default-source-language "pl")
-(setq google-translate-default-target-language "en")
+(use-package google-translate
+  :init
+  (setq google-translate-default-source-language "pl"
+        google-translate-default-target-language "en")
 
-(global-set-key (kbd "C-c t T")
-                'google-translate-at-point)
-(global-set-key (kbd "C-c t t")
-                'google-translate-query-translate)
-
-(global-set-key (kbd "C-c t R")
-                'google-translate-at-point-reverse)
-(global-set-key (kbd "C-c t r")
-                'google-translate-query-translate-reverse)
+  :bind
+  (("C-c t T" . google-translate-at-point)
+   ("C-c t t" . google-translate-query-translate)
+   ("C-c t R" . google-translate-at-point-reverse)
+   ("C-c t r" . google-translate-query-translate-reverse)))
 
 
 ;; Sclala dirty intro FIXME
