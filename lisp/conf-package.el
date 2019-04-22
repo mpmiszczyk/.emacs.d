@@ -21,6 +21,7 @@
 
 (defvar required-packages
   '(avy
+    ace-jump-buffer
     autopair
     erlang
     expand-region

@@ -90,7 +90,7 @@
                             (next-error -1)))
 
 
-(global-set-key (kbd "C-;") 'ace-jump-mode)
+(global-set-key (kbd "C-;") 'avy-goto-word-1)
 (global-set-key (kbd "C-'") 'ace-jump-buffer)
 
 
