@@ -20,44 +20,22 @@
 
 
 (defvar required-packages
-  '(ace-jump-buffer
-    ace-jump-mode
-    alert
-    auto-complete
+  '(avy
     autopair
-    color-theme
-    dash
-    edts
-    epc
-    epl
-    elpy
-    elfeed
     erlang
     expand-region
     f
     flycheck
     google-translate
-    ;; hide-comnt
-    ido-vertical-mode
-    idomenu
-    iedit
     magit
     markdown-mode
-    nose
     org
     org-journal
-    ;; org-magit
-    org-pomodoro
-    pkg-info
-    popup
+    popup ; to be removed
     rainbow-delimiters
-    rainbow-mode
-    s
-    smex
-    ssh
-    vagrant-tramp
-    w3
-    w3m
+    smex ; to be removed
+    speed-type
+    ssh ; not sure needed
     yaml-mode
     yasnippet
     zenburn-theme)
