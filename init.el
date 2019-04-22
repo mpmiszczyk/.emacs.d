@@ -4,7 +4,7 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
-(setq custom-file "~/.emacs.d/custom.el")
+(setq custom-file (make-temp-file "emacs-custom"))
 (load custom-file)
 
 (tool-bar-mode -1)
