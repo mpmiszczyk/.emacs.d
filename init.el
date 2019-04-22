@@ -1,4 +1,3 @@
-
 ;; Added by Package.el.  This must corme before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -26,8 +25,6 @@
 ;(elpy-enable)
 
 (load-theme 'zenburn)
-(load "conf-elfeed")
-(load "conf-js")
 
 ;; all links are opened in chrome
 (setq browse-url-browser-function 'browse-url-generic
@@ -45,23 +42,6 @@
    ("C-c t R" . google-translate-at-point-reverse)
    ("C-c t r" . google-translate-query-translate-reverse)))
 
-
-;; Sclala dirty intro FIXME
-(use-package ensime
-  :ensure t
-  :pin melpa)
-
-(use-package sbt-mode
-  :pin melpa)
-
-(use-package scala-mode
-  :pin melpa)
-
-(setq ensime-startup-notification nil)
-(setq ensime-startup-snapshot-notification nil)
-
-
-
 (autopair-global-mode)
 (global-hl-line-mode)
 (ido-vertical-mode)
@@ -72,7 +52,6 @@
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 
 ;; scroll one line at a time (less "jumpy" than defaults)
-
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 (setq mouse-wheel-follow-mouse nil) ;; scroll window under mouse
@@ -84,17 +63,7 @@
 
 (global-set-key (kbd "<C-tab>") 'other-window)
 
-
-;; jakoś nie chce to mi działać :/
-;; (setq tramp-syntax 'url)
-;; (setq tramp-default-method "ssh")
-
-;; (require 'conf-mu4e)
-
 (require 'tramp)
-
-(eval-after-load 'tramp
-  '(vagrant-tramp-enable))
 
 (defun find-alternative-file-with-sudo ()
   (interactive)
@@ -103,12 +72,6 @@
      (concat "/sudo:root@localhost:"
              buffer-file-name))))
 (global-set-key (kbd "C-x C-r") 'find-alternative-file-with-sudo)
-
-                                        ;(load-file "/media/own/opt/cedet-1.1/common/cedet.el")
-                                        ;(global-ede-mode 1)                      ; Enable the Project management system
-                                        ;(semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion 
-                                        ;(global-srecode-minor-mode 1)            ; Enable template insertion menu
-
 
 (global-set-key [(meta x)] (lambda ()
                              (interactive)
@@ -123,13 +86,6 @@
                                        (smex-initialize))
                                    (global-set-key [(shift meta x)] 'smex-major-mode-commands)
                                    (smex-major-mode-commands)))
-
-
-;; Lisp Flavored Erlang mode
-;; Set lfe-dir to point to where the lfe emacs files are.
-                                        ;(defvar lfe-dir "/media/own/opt/lfe/emacs")
-                                        ;(setq load-path (cons lfe-dir load-path))
-                                        ;(require 'lfe-start)
 
 
 (global-set-key [M-down] 'next-error)
@@ -148,11 +104,8 @@
 
 (require 'org-mode-config)
 
-
-
 (add-to-list 'load-path "~/.emacs.d/opt/edts")
 (require 'edts-start)
-
 
 ;; TODO add to other modes with function
 (add-hook 'erlang-mode-hook
@@ -160,16 +113,6 @@
 
 
 (setq erlang-indent-level 2)
-
-
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-
-
 
 
 (defun toggle-window-split ()
@@ -198,7 +141,3 @@
 	  (if this-win-2nd (other-window 1))))))
 
 (global-set-key (kbd "C-x |") 'toggle-window-split)
-
-
-;; (magit-define-popup-option 'magit-commit-popup
-;;   ?D "Override the author date" "--date=" #'read-from-minibuffer)
