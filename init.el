@@ -40,8 +40,6 @@
 
 (autopair-global-mode)
 (global-hl-line-mode)
-(ido-vertical-mode)
-
 
 ;; note to myself:
 ;; ediff docs suck
@@ -69,30 +67,9 @@
              buffer-file-name))))
 (global-set-key (kbd "C-x C-r") 'find-alternative-file-with-sudo)
 
-(global-set-key [(meta x)] (lambda ()
-                             (interactive)
-                             (or (boundp 'smex-cache)
-                                 (smex-initialize))
-                             (global-set-key [(meta x)] 'smex)
-                             (smex)))
-
-(global-set-key [(shift meta x)] (lambda ()
-                                   (interactive)
-                                   (or (boundp 'smex-cache)
-                                       (smex-initialize))
-                                   (global-set-key [(shift meta x)] 'smex-major-mode-commands)
-                                   (smex-major-mode-commands)))
-
-
-(global-set-key [M-down] 'next-error)
-(global-set-key [M-up]   '(lambda ()
-                            (interactive)
-                            (next-error -1)))
-
 
 (global-set-key (kbd "C-;") 'avy-goto-word-1)
 (global-set-key (kbd "C-'") 'ace-jump-buffer)
-
 
 (global-set-key "\M-]" 'er/expand-region)
 (global-set-key "\M-[" 'er/contract-region)
