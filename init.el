@@ -13,7 +13,7 @@
 
 ;;(set-default-font “Lekton-9”)
 ;;(set-face-attribute 'default nil :font "DejaVu Sans Mono-10")
-(set-face-attribute 'default nil :font "Iosevka-10.5")
+(set-face-attribute 'default nil :font "Iosevka-10")
 
 
 (setq custom-file "~/.emacs.d/custom.el")
