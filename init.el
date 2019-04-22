@@ -14,17 +14,13 @@
 ;;(set-face-attribute 'default nil :font "DejaVu Sans Mono-10")
 (set-face-attribute 'default nil :font "Iosevka-10")
 
-
-(setq custom-file "~/.emacs.d/custom.el")
-(load custom-file)
-
-
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
 (load "conf-package")
 ;(elpy-enable)
 
-(load-theme 'zenburn)
+;; load theme without confirmation
+(load-theme 'zenburn t)
 
 ;; all links are opened in chrome
 (setq browse-url-browser-function 'browse-url-generic
