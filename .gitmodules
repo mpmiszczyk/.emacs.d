@@ -1,6 +1,3 @@
-[submodule "opt/wrangler"]
-	path = opt/wrangler
-	url = https://github.com/RefactoringTools/wrangler.git
 [submodule "themes/zenburn"]
 	path = themes/zenburn
 	url = https://github.com/mpmiszczyk/zenburn-emacs.git
