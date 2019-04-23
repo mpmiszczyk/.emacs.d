@@ -28,10 +28,12 @@
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
 (load "conf-package")
-;(elpy-enable)
 
 ;; load theme without confirmation
-(load-theme 'zenburn t)
+(use-package zenburn-theme
+  :init
+  (load-theme 'zenburn t))
+
 
 ;; all links are opened in chrome
 (setq browse-url-browser-function 'browse-url-generic
@@ -39,7 +41,6 @@
 
 
 (use-package google-translate
-  :straight t
   :init
   (setq google-translate-default-source-language "pl"
         google-translate-default-target-language "en")
@@ -50,7 +51,10 @@
    ("C-c t R" . google-translate-at-point-reverse)
    ("C-c t r" . google-translate-query-translate-reverse)))
 
-(autopair-global-mode)
+(use-package autopair
+  :init
+  (autopair-global-mode))
+
 (global-hl-line-mode)
 
 ;; note to myself:

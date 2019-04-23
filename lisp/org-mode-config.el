@@ -32,11 +32,6 @@ is loaded dynamiclly"
   (save-some-buffers))
 
 
-
-(require 'org-journal)
-(setq org-journal-dir (concat org-directory "/journal/"))
-
-
 (setq org-pomodoro-play-ticking-sounds t)
 (setq org-pomodoro-sound-args "-v 0.1")
 
