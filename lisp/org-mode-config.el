@@ -16,8 +16,6 @@
              (rainbow-delimiters-mode-disable)
              (add-hook 'kill-emacs-hook 'org-clock-out-on-exit)))
 
-
-
 (defun org-clock-out-on-exit ()
   "Closes active clock when exiting emacs;
 
@@ -64,7 +62,9 @@ is loaded dynamiclly"
 ; normal yank will act as smart one in org-mode
 (setq org-yank-adjusted-subtrees t)
 
-;; (add-to-list 'org-modules 'org-habit)
+(use-package org-journal
+  :init
+  (setq org-journal-dir (concat org-directory "/journal/")))
 
 
 (provide 'org-mode-config)
