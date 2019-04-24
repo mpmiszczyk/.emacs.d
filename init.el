@@ -47,6 +47,10 @@
 
 (load "conf-package")
 
+(use-package magit
+  :bind
+  ("M-M". magit-status))
+
 ;; load theme without confirmation
 (use-package zenburn-theme
   :init

@@ -9,7 +9,6 @@
          f
          flycheck
          google-translate
-         magit
          markdown-mode
          org
          speed-type
