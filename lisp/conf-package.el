@@ -12,7 +12,6 @@
          magit
          markdown-mode
          org
-         rainbow-delimiters
          speed-type
          ssh ; not sure needed
          yaml-mode

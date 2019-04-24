@@ -98,6 +98,9 @@
 (add-hook 'erlang-mode-hook
           'rainbow-delimiters-mode)
 
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
+
 (setq erlang-indent-level 2)
 
 (defun toggle-window-split ()
