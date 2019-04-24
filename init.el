@@ -86,6 +86,8 @@
   :bind
   ("M-M". magit-status))
 
+(use-package git-timemachine)
+
 ;; load theme without confirmation
 (use-package zenburn-theme
   :init
