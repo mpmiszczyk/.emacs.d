@@ -47,6 +47,41 @@
 
 (load "conf-package")
 
+(use-package ivy
+  :custom
+  (ivy-extra-directories nil)
+  (ivy-re-builders-alist
+   '((swiper . ivy--regex-plus)
+     (counsel-ag . ivy--regex-plus)
+     (t . ivy--regex-fuzzy)))
+  (ivy-use-virtual-buffers t)
+  (ivy-virtual-abbreviate 'abbreviate)
+  (ivy-format-function #'ivy-format-function-arrow)
+  :bind
+  ("s-b" . ivy-switch-buffer)
+  (:map ivy-switch-buffer-map
+        ("s-k" . ivy-switch-buffer-kill))
+  ;;  :chords
+  ;;  (";s" . ivy-switch-buffer)
+  :init
+  (ivy-mode))
+
+(use-package swiper
+  :bind
+  ([remap isearch-forward]  . swiper)
+  ([remap isearch-backward] . swiper))
+
+(use-package counsel
+  :bind
+  ;;([remap execute-extended-command] . counsel-M-x)
+  ;;("s-P" . counsel-M-x)
+  ;;("s-y" . counsel-yank-pop)
+  ("M-x" . counsel-M-x)
+  
+  ;;  :chords
+  ;;  (";f" . counsel-find-file)
+  )
+
 (use-package magit
   :bind
   ("M-M". magit-status))

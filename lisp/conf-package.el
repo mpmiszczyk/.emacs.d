@@ -8,7 +8,6 @@
          expand-region
          f
          flycheck
-         google-translate
          markdown-mode
          org
          speed-type
@@ -18,6 +17,6 @@
          zenburn-theme)))
   "Packages which should be installed upon launch"
   (dolist (package required-packages)
-    (straight-use-package (quote package))))
+    (use-package package)))
 
 
