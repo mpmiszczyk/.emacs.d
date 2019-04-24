@@ -21,9 +21,27 @@
 
 (setq inhibit-startup-message t)
 
+;; all links are opened in chrome
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "google-chrome-stable")
+
 ;;(set-default-font “Lekton-9”)
 ;;(set-face-attribute 'default nil :font "DejaVu Sans Mono-10")
 (set-face-attribute 'default nil :font "Iosevka-10")
+
+;; note to myself:
+;; ediff docs suck
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+
+;; scroll one line at a time (less "jumpy" than defaults)
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+(setq mouse-wheel-follow-mouse nil) ;; scroll window under mouse
+(setq scroll-step 1) ;; keyboard scroll one line at a time
+
+
+(setq default-tab-width 2)
+(setq-default indent-tabs-mode nil)
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
@@ -33,12 +51,6 @@
 (use-package zenburn-theme
   :init
   (load-theme 'zenburn t))
-
-
-;; all links are opened in chrome
-(setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "google-chrome-stable")
-
 
 (use-package google-translate
   :init
@@ -57,23 +69,7 @@
 
 (global-hl-line-mode)
 
-;; note to myself:
-;; ediff docs suck
-(setq ediff-window-setup-function 'ediff-setup-windows-plain)
-
-;; scroll one line at a time (less "jumpy" than defaults)
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
-(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
-(setq mouse-wheel-follow-mouse nil) ;; scroll window under mouse
-(setq scroll-step 1) ;; keyboard scroll one line at a time
-
-
-(setq default-tab-width 2)
-(setq-default indent-tabs-mode nil)
-
 (global-set-key (kbd "<C-tab>") 'other-window)
-
-(require 'tramp)
 
 (defun find-alternative-file-with-sudo ()
   (interactive)
@@ -83,9 +79,14 @@
              buffer-file-name))))
 (global-set-key (kbd "C-x C-r") 'find-alternative-file-with-sudo)
 
+(use-package avy
+  :bind
+  (("C-;" . avy-goto-word-1)))
 
-(global-set-key (kbd "C-;") 'avy-goto-word-1)
-(global-set-key (kbd "C-'") 'ace-jump-buffer)
+(use-package ace-jump-buffer
+    :bind
+    (("C-'" . ace-jump-buffer)))
+
 
 (global-set-key "\M-]" 'er/expand-region)
 (global-set-key "\M-[" 'er/contract-region)
@@ -103,25 +104,25 @@
   (interactive)
   (if (= (count-windows) 2)
       (let* ((this-win-buffer (window-buffer))
-	     (next-win-buffer (window-buffer (next-window)))
-	     (this-win-edges (window-edges (selected-window)))
-	     (next-win-edges (window-edges (next-window)))
-	     (this-win-2nd (not (and (<= (car this-win-edges)
-					 (car next-win-edges))
-				     (<= (cadr this-win-edges)
-					 (cadr next-win-edges)))))
-	     (splitter
-	      (if (= (car this-win-edges)
-		     (car (window-edges (next-window))))
-		  'split-window-horizontally
-		'split-window-vertically)))
-	(delete-other-windows)
-	(let ((first-win (selected-window)))
-	  (funcall splitter)
-	  (if this-win-2nd (other-window 1))
-	  (set-window-buffer (selected-window) this-win-buffer)
-	  (set-window-buffer (next-window) next-win-buffer)
-	  (select-window first-win)
-	  (if this-win-2nd (other-window 1))))))
+             (next-win-buffer (window-buffer (next-window)))
+             (this-win-edges (window-edges (selected-window)))
+             (next-win-edges (window-edges (next-window)))
+             (this-win-2nd (not (and (<= (car this-win-edges)
+                                         (car next-win-edges))
+                                     (<= (cadr this-win-edges)
+                                         (cadr next-win-edges)))))
+             (splitter
+              (if (= (car this-win-edges)
+                     (car (window-edges (next-window))))
+                  'split-window-horizontally
+                'split-window-vertically)))
+        (delete-other-windows)
+        (let ((first-win (selected-window)))
+          (funcall splitter)
+          (if this-win-2nd (other-window 1))
+          (set-window-buffer (selected-window) this-win-buffer)
+          (set-window-buffer (next-window) next-win-buffer)
+          (select-window first-win)
+          (if this-win-2nd (other-window 1))))))
 
 (global-set-key (kbd "C-x |") 'toggle-window-split)

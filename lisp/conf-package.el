@@ -4,9 +4,7 @@
 (setq straight-use-package-by-default t)
 
 (let ((required-packages
-       '(avy
-         ace-jump-buffer
-         erlang
+       '(erlang
          expand-region
          f
          flycheck
@@ -14,10 +12,7 @@
          magit
          markdown-mode
          org
-         org-journal
-         popup ; to be removed
          rainbow-delimiters
-         smex ; to be removed
          speed-type
          ssh ; not sure needed
          yaml-mode
