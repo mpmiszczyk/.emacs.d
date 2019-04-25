@@ -135,10 +135,6 @@
 
 (require 'org-mode-config)
 
-;; TODO add to other modes with function
-(add-hook 'erlang-mode-hook
-          'rainbow-delimiters-mode)
-
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
