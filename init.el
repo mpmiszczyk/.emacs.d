@@ -135,6 +135,17 @@
 
 (require 'org-mode-config)
 
+(use-package elfeed)
+(use-package s)
+
+(use-package elfeed-org
+  :config
+  (setq rmh-elfeed-org-files (list "~/.emacs.d/lisp/elfeed.org"))
+  :init
+  (elfeed-org)
+  :after (elfeed s)
+)
+
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
