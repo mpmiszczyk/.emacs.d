@@ -5,3 +5,7 @@
 ** emacs                                                             :emacs:
 
 *** [[https://planet.emacslife.com/atom.xml][Planet Emacs]]
+
+** other
+
+*** [[https://no-kill-switch.ghost.io/rss/][No Kill Switch]]
