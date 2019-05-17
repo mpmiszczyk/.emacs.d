@@ -1,11 +1,20 @@
-
-
 * Blogs                                                              :elfeed:
 
 ** emacs                                                             :emacs:
 
-*** [[https://planet.emacslife.com/atom.xml][Planet Emacs]]
+*** [[https://planet.emacslife.com/atom.xml][Planet Emacs]]                                                   :planet:
 
+** Programing
+*** Erlang                                                         :erlang:
+**** [[https://blog.acolyer.org/feed/][Fred]]
+
+*** Elixir                                                         :elixir:
+**** [[http://blog.plataformatec.com.br/feed/][Platformatec]]
+
+Jose Valim works here.
 ** other
 
 *** [[https://no-kill-switch.ghost.io/rss/][No Kill Switch]]
+
+*** [[https://medium.com/feed/@kentbeck_7670][Kent Beck]]
+*** [[https://blog.acolyer.org/feed/][Moring Paper]]                                                    :paper:
