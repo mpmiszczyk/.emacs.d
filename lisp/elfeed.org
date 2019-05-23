@@ -7,7 +7,7 @@
 ** Programing
 *** Erlang                                                         :erlang:
 **** [[https://blog.acolyer.org/feed/][Fred]]
-
+**** [[http://blog.erlang.org/feed.xml][Eralang OTP]]
 *** Elixir                                                         :elixir:
 **** [[http://blog.plataformatec.com.br/feed/][Platformatec]]
 
