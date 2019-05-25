@@ -27,7 +27,7 @@
 
 ;;(set-default-font “Lekton-9”)
 ;;(set-face-attribute 'default nil :font "DejaVu Sans Mono-10")
-(set-face-attribute 'default nil :font "Iosevka ss04-10")
+(set-face-attribute 'default nil :font "Iosevka ss04-11")
 ;;(set-face-attribute 'default nil :font "Iosevka-10") ;gggg
 
 ;; note to myself:
