@@ -129,10 +129,10 @@
     :bind
     (("C-'" . ace-jump-buffer)))
 
-
-(global-set-key "\M-]" 'er/expand-region)
-(global-set-key "\M-[" 'er/contract-region)
-
+(use-package expand-region
+  :bind
+  (("\M-]" . er/expand-region)
+   ("\M-[" . er/contract-region)))
 
 (require 'org-mode-config)
 
