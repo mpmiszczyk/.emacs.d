@@ -66,7 +66,15 @@ is loaded dynamiclly"
 
 (use-package org-journal
   :custom
-  (org-journal-dir (concat org-directory "/journal/")))
-
+  (org-journal-dir (concat org-directory "/journal/"))
+  (org-journal-tag-alist '(("personal" . ?p)
+                           ("dreams" . ?d)
+                           ("memories" . ?m)
+                           ("summary" . ?s)
+                           ("writing" . ?W)
+                           ("craft" . ?c)
+                           ("work" . ?w)
+                           ))
+  )
 
 (provide 'org-mode-config)
