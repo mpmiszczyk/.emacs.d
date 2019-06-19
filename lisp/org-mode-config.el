@@ -1,3 +1,5 @@
+(use-package org)
+
 (setq org-directory "~/Dropbox/org")
 (setq org-default-notes-file (concat org-directory "/inbox.org"))
 (define-key global-map "\C-cc" 'org-capture)
