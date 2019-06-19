@@ -63,8 +63,8 @@ is loaded dynamiclly"
 (setq org-yank-adjusted-subtrees t)
 
 (use-package org-journal
-  :init
-  (setq org-journal-dir (concat org-directory "/journal/")))
+  :custom
+  (org-journal-dir (concat org-directory "/journal/")))
 
 
 (provide 'org-mode-config)
