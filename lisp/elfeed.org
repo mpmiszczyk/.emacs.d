@@ -8,6 +8,7 @@
 *** Erlang                                                         :erlang:
 **** [[https://blog.acolyer.org/feed/][Fred]]
 **** [[http://blog.erlang.org/feed.xml][Eralang OTP]]
+**** [[http://www.riak.info/news-and-events/feed/][Riak]]
 *** Elixir                                                         :elixir:
 **** [[http://blog.plataformatec.com.br/feed/][Platformatec]]
 
