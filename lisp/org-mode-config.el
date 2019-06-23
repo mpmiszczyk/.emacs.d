@@ -57,10 +57,6 @@ is loaded dynamiclly"
 
 (setq org-refile-allow-creating-parent-nodes nil)
 
-; Use IDO for both buffer and file completion and ido-everywhere to t
-(setq org-completion-use-ido t)
-(setq ido-everywhere t)
-
 ; normal yank will act as smart one in org-mode
 (setq org-yank-adjusted-subtrees t)
 
