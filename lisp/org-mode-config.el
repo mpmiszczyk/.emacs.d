@@ -74,6 +74,7 @@ is loaded dynamiclly"
                            ("writing" . ?W)
                            ("craft" . ?c)
                            ("work" . ?w)
+                           ("daily" . ?d)
                            ))
   )
 
