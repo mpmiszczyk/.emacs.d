@@ -31,10 +31,6 @@ is loaded dynamiclly"
   (org-clock-out nil t)
   (save-some-buffers))
 
-
-(setq org-pomodoro-play-ticking-sounds t)
-(setq org-pomodoro-sound-args "-v 0.1")
-
 (setq org-clock-into-drawer t)
 
 (defun set-org-agenda-files ()
