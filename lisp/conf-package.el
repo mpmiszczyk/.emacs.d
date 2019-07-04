@@ -9,7 +9,6 @@
          f
          flycheck
          markdown-mode
-         org
          speed-type
          ssh ; not sure needed
          yaml-mode
