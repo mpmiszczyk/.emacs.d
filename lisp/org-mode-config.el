@@ -60,7 +60,7 @@ is loaded dynamiclly"
   :custom
   (org-journal-dir (concat org-directory "/journal/"))
   (org-journal-tag-alist '(("personal" . ?p)
-                           ("dreams" . ?d)
+                           ("dreams" . ?D)
                            ("memories" . ?m)
                            ("summary" . ?s)
                            ("writing" . ?W)
