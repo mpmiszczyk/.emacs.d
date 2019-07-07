@@ -48,6 +48,35 @@
 
 (load "conf-package")
 
+(use-package ispell
+  :custom
+  (ispell-program-name "hunspell")
+  (ispell-really-hunspell t)
+  ;; (ispell-extra-args '("-a" "-i" "utf-8"))
+  (ispell-dictionary-alist
+   ;; (mapcar (lambda (name-and-dictionary-string)
+   ;;           (list (car name-and-dictionary-string)
+   ;;                 "[A-Za-z]" "[^[:alpha:]]" "[']" t
+   ;;                 ("-d" (cdr name-and-dictionary-string) "-i" "utf-8") nil utf-8))
+   ;;         '(("american" "en_US")))
+
+   '(("american"
+      "[[:alpha:]]" "[^[:alpha:]]" "[']" nil
+      ("-d" "en_US") nil utf-8)
+     ("english"
+      "[[:alpha:]]" "[^[:alpha:]]" "[']" nil
+      ("-d" "en_GB") nil utf-8)
+     ("polish"
+      "[[:alpha:]]" "[^[:alpha:]]" "[']" nil
+      ("-d" "pl_PL") nil utf-8)
+     ("pe"
+      "[[:alpha:]]" "[^[:alpha:]]" "[']" nil
+      ("-d" "en_US,en_GB,pl_PL") nil utf-8)))
+  (ispell-dictionary "pe")
+  (ispell-hunspell-dictionary-alist ispell-dictionary-alist)
+  :bind
+  ("C-c d" . ispell-change-dictionary))
+
 (use-package ivy
   :custom
   (ivy-extra-directories nil)
@@ -58,8 +87,10 @@
   (ivy-use-virtual-buffers t)
   (ivy-virtual-abbreviate 'abbreviate)
   (ivy-format-function #'ivy-format-function-arrow)
+
   :bind
   ("s-b" . ivy-switch-buffer)
+
   (:map ivy-switch-buffer-map
         ("s-k" . ivy-switch-buffer-kill))
   ;;  :chords
@@ -78,7 +109,7 @@
   ;;("s-P" . counsel-M-x)
   ;;("s-y" . counsel-yank-pop)
   ("M-x" . counsel-M-x)
-  
+
   ;;  :chords
   ;;  (";f" . counsel-find-file)
   )
