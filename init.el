@@ -61,14 +61,7 @@
   :custom
   (ispell-program-name "hunspell")
   (ispell-really-hunspell t)
-  ;; (ispell-extra-args '("-a" "-i" "utf-8"))
   (ispell-dictionary-alist
-   ;; (mapcar (lambda (name-and-dictionary-string)
-   ;;           (list (car name-and-dictionary-string)
-   ;;                 "[A-Za-z]" "[^[:alpha:]]" "[']" t
-   ;;                 ("-d" (cdr name-and-dictionary-string) "-i" "utf-8") nil utf-8))
-   ;;         '(("american" "en_US")))
-
    '(("american"
       "[[:alpha:]]" "[^[:alpha:]]" "[']" nil
       ("-d" "en_US") nil utf-8)
