@@ -59,6 +59,8 @@
   (add-to-list
    'eglot-server-programs '(elixir-mode "/home/mpm/elixir_ls/release/language_server.sh" )))
 
+(use-package exunit)
+
 (use-package ispell
   :custom
   (ispell-program-name "hunspell")
