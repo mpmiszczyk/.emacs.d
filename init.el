@@ -98,6 +98,29 @@
   :init
   (ivy-mode))
 
+(use-package prescient
+  :config
+  (setq prescient-history-length 2000)
+  (setq prescient-save-file "~/.emacs.d/prescient-items")
+  (setq prescient-filter-method '(literal regexp))
+  (prescient-persist-mode 1))
+
+(use-package ivy-prescient
+  :after (prescient ivy)
+  :config
+  (setq ivy-prescient-sort-commands
+        '(:not counsel-grep
+               counsel-rg
+               counsel-switch-buffer
+               ivy-switch-buffer
+               swiper
+               swiper-multi))
+  (setq ivy-prescient-retain-classic-highlighting t)
+  (setq ivy-prescient-enable-filtering nil)
+  (setq ivy-prescient-enable-sorting t)
+  (ivy-prescient-mode 1))
+
+
 (use-package swiper
   :bind
   ([remap isearch-forward]  . swiper)
