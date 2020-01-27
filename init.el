@@ -48,6 +48,15 @@
 
 (load "conf-package")
 
+(use-package elixir-mode)
+
+(use-package eglot
+  :commands (eglot eglot-ensures)
+  :hook (elixir-mode . eglot-ensure)
+  :config
+  (add-to-list
+   'eglot-server-programs '(elixir-mode "/home/mpm/elixir_ls/release/language_server.sh" )))
+
 (use-package ispell
   :custom
   (ispell-program-name "hunspell")
