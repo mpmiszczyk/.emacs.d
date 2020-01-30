@@ -57,7 +57,7 @@
   (before-save . eglot-format-buffer)
   :config
   (add-to-list
-   'eglot-server-programs '(elixir-mode "/home/mpm/elixir_ls/release/language_server.sh" )))
+   `eglot-server-programs `(elixir-mode ,(expand-file-name  "~/elixir_ls/release/language_server.sh"))))
 
 (use-package yasnippet
   :hook (elixir-mode . yas-minor-mode))
