@@ -143,13 +143,7 @@
 
 (use-package counsel
   :bind
-  ;;([remap execute-extended-command] . counsel-M-x)
-  ;;("s-P" . counsel-M-x)
-  ;;("s-y" . counsel-yank-pop)
-  ("M-x" . counsel-M-x)
-
-  ;;  :chords
-  ;;  (";f" . counsel-find-file)
+  ([remap execute-extended-command] . counsel-M-x)
   )
 
 (use-package magit
