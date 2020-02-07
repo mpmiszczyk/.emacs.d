@@ -102,10 +102,9 @@
 
   (:map ivy-switch-buffer-map
         ("s-k" . ivy-switch-buffer-kill))
-  ;;  :chords
-  ;;  (";s" . ivy-switch-buffer)
-  :init
-  (ivy-mode))
+  :config
+  (ivy-mode t))
+
 
 (use-package prescient
   :config
