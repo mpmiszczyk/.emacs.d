@@ -105,6 +105,13 @@
   :config
   (ivy-mode t))
 
+(use-package ivy-rich
+  :config
+  (setq ivy-rich-path-style 'abbreviate)
+
+  (setcdr (assq t ivy-format-functions-alist)
+          #'ivy-format-function-line)
+  :hook (after-init . ivy-rich-mode))
 
 (use-package prescient
   :config
