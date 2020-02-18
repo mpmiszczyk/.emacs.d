@@ -67,7 +67,6 @@ is loaded dynamiclly"
                            ("craft" . ?c)
                            ("work" . ?w)
                            ("daily" . ?d)
-                           ))
-  )
+                           ("fresha" . ?f))))
 
 (provide 'org-mode-config)
