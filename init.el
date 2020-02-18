@@ -98,11 +98,6 @@
   (ivy-virtual-abbreviate 'abbreviate)
   (ivy-format-function #'ivy-format-function-arrow)
 
-  :bind
-  ("s-b" . ivy-switch-buffer)
-
-  (:map ivy-switch-buffer-map
-        ("s-k" . ivy-switch-buffer-kill))
   :config
   (ivy-mode t))
 
