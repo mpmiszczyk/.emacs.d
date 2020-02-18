@@ -46,7 +46,8 @@
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
-(load "conf-package")
+(straight-use-package 'use-package)
+(setq straight-use-package-by-default t)
 
 (use-package elixir-mode)
 
