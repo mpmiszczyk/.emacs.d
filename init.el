@@ -152,13 +152,13 @@
 
 (use-package git-timemachine)
 
-(use-package zenburn-theme)
-
 (use-package nord-theme)
 
 (use-package modus-operandi-theme)
 
 (use-package modus-vivendi-theme)
+
+(use-package zenburn-theme)
 
 (use-package google-translate
   :init
