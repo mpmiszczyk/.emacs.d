@@ -11,6 +11,8 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
+(straight-use-package 'use-package)
+(setq straight-use-package-by-default t)
 
 (setq custom-file (make-temp-file "emacs-custom"))
 (load custom-file)
@@ -45,9 +47,6 @@
 (setq-default indent-tabs-mode nil)
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
-
-(straight-use-package 'use-package)
-(setq straight-use-package-by-default t)
 
 (use-package elixir-mode)
 
