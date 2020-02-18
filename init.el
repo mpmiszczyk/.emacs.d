@@ -23,18 +23,20 @@
 
 (setq inhibit-startup-message t)
 
-;; all links are opened in chrome
-(setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "google-chrome-stable")
+(use-package nord-theme)
+
+(use-package modus-operandi-theme)
+
+(use-package modus-vivendi-theme)
+
+(use-package zenburn-theme)
+
+(global-hl-line-mode)
 
 ;;(set-default-font “Lekton-9”)
 ;;(set-face-attribute 'default nil :font "DejaVu Sans Mono-10")
 (set-face-attribute 'default nil :font "Iosevka ss04-11")
 ;;(set-face-attribute 'default nil :font "Iosevka-10") ;gggg
-
-;; note to myself:
-;; ediff docs suck
-(setq ediff-window-setup-function 'ediff-setup-windows-plain)
 
 ;; scroll one line at a time (less "jumpy" than defaults)
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
@@ -42,6 +44,13 @@
 (setq mouse-wheel-follow-mouse nil) ;; scroll window under mouse
 (setq scroll-step 1) ;; keyboard scroll one line at a time
 
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "google-chrome-stable")
+
+
+;; note to myself:
+;; ediff docs suck
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
 
 (setq default-tab-width 2)
 (setq-default indent-tabs-mode nil)
@@ -148,14 +157,6 @@
 
 (use-package git-timemachine)
 
-(use-package nord-theme)
-
-(use-package modus-operandi-theme)
-
-(use-package modus-vivendi-theme)
-
-(use-package zenburn-theme)
-
 (use-package google-translate
   :init
   (setq google-translate-default-source-language "pl"
@@ -170,8 +171,6 @@
 (use-package autopair
   :init
   (autopair-global-mode))
-
-(global-hl-line-mode)
 
 (global-set-key (kbd "<C-tab>") 'other-window)
 
