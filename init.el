@@ -185,7 +185,8 @@
 
 (use-package avy
   :bind
-  (("C-;" . avy-goto-word-1)))
+  (("C-;" . avy-goto-char-timer)
+   ("C-:" . avy-goto-subword-or-word-1)))
 
 (use-package ace-jump-buffer
     :bind
