@@ -134,12 +134,13 @@
 
 (use-package swiper
   :bind
-  ([remap isearch-forward]  . swiper)
-  ([remap isearch-backward] . swiper))
+  (([remap isearch-forward]  . swiper)
+   ([remap isearch-backward] . swiper-backward)))
 
 (use-package counsel
   :bind
-  ([remap execute-extended-command] . counsel-M-x)
+  (([remap execute-extended-command] . counsel-M-x)
+   ([remap yank-pop] . counsel-yank-pop))
   )
 
 (use-package magit
