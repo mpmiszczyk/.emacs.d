@@ -57,6 +57,10 @@
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
+(use-package exec-path-from-shell
+  :config
+  (exec-path-from-shell-initialize))
+
 (use-package elixir-mode)
 
 (use-package eglot
