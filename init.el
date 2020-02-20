@@ -118,7 +118,6 @@
   (ivy-use-virtual-buffers t)
   (ivy-virtual-abbreviate 'abbreviate)
   (ivy-format-function #'ivy-format-function-arrow)
-
   :config
   (ivy-mode t))
 
@@ -163,6 +162,9 @@
   (([remap execute-extended-command] . counsel-M-x)
    ([remap yank-pop] . counsel-yank-pop))
   )
+
+(use-package counsel-projectile
+  :after (counsel projectile))
 
 (use-package magit
   :bind
