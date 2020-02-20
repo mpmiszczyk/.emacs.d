@@ -72,16 +72,13 @@
   (add-to-list
    `eglot-server-programs `(elixir-mode ,(expand-file-name  "~/elixir_ls/release/language_server.sh"))))
 
-
-(use-package projectile)
-
-(defun my-projectile-project-find-function (dir)
+(use-package projectile
+  :after project
+  :config
+  (projectile-mode +1)
+  (defun my-projectile-project-find-function (dir)
     (let ((root (projectile-project-root dir)))
       (and root (cons 'transient root))))
-
-(projectile-mode t)
-
-(with-eval-after-load 'project
   (add-to-list 'project-find-functions 'my-projectile-project-find-function))
 
 (use-package yasnippet
