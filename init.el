@@ -64,6 +64,11 @@
   :config
   (exec-path-from-shell-initialize))
 
+(use-package ag
+  :custom
+  (ag-highlight-search t)
+  (ag-reuse-buffers t))
+
 (use-package elixir-mode)
 
 (use-package eglot
@@ -77,7 +82,10 @@
 
 (use-package projectile
   :after project
+  :bind-keymap
+  ("C-c p" . projectile-command-map)
   :config
+  (setq projectile-completion-system 'ivy)
   (projectile-mode +1)
   (defun my-projectile-project-find-function (dir)
     (let ((root (projectile-project-root dir)))
@@ -166,8 +174,9 @@
    ([remap yank-pop] . counsel-yank-pop))
   )
 
-(use-package counsel-projectile
-  :after (counsel projectile))
+;; (use-package counsel-projectile
+;;   :after (counsel projectile)
+;;   :hook (projectile-mode . counsel-projectile-mode))
 
 (use-package magit
   :bind
