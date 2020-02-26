@@ -69,6 +69,9 @@
   (ag-highlight-search t)
   (ag-reuse-buffers t))
 
+
+(use-package erlang)
+
 (use-package elixir-mode)
 
 (use-package eglot
