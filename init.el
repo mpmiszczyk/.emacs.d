@@ -69,6 +69,7 @@
   (ag-highlight-search t)
   (ag-reuse-buffers t))
 
+(use-package markdown-mode)
 
 (use-package erlang)
 
@@ -122,6 +123,9 @@
   (ispell-hunspell-dictionary-alist ispell-dictionary-alist)
   :bind
   ("C-c d" . ispell-change-dictionary))
+
+(use-package dockerfile-mode)
+(use-package docker-compose-mode)
 
 (use-package ivy
   :custom
