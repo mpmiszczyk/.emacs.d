@@ -64,6 +64,11 @@
   :config
   (exec-path-from-shell-initialize))
 
+(use-package peep-dired
+  :after dired
+  :bind (:map dired-mode-map
+              ("P" . peep-dired)))
+
 (use-package ag
   :custom
   (ag-highlight-search t)
