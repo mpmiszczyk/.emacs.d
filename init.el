@@ -193,7 +193,9 @@
 
 (use-package magit
   :bind
-  ("M-M". magit-status))
+  ("M-M". magit-status)
+  :config
+  (setq magit-list-refs-sortby "-committerdate"))
 
 (use-package git-timemachine)
 
