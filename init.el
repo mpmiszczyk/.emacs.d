@@ -30,9 +30,9 @@
 
 (use-package modus-operandi-theme)
 
-(use-package modus-vivendi-theme)
-
 (use-package zenburn-theme)
+
+(use-package modus-vivendi-theme)
 
 (global-hl-line-mode)
 
