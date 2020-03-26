@@ -195,7 +195,8 @@
   :bind
   ("M-M". magit-status)
   :config
-  (setq magit-list-refs-sortby "-committerdate"))
+  (setq magit-list-refs-sortby "-committerdate")
+  (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1))
 
 (use-package git-timemachine)
 
