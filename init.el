@@ -200,6 +200,8 @@
 
 (use-package git-timemachine)
 
+(use-package git-gutter)
+
 (use-package google-translate
   :init
   (setq google-translate-default-source-language "pl"
