@@ -90,6 +90,11 @@
   (add-to-list
    `eglot-server-programs `(elixir-mode ,(expand-file-name  "~/elixir_ls/release/language_server.sh"))))
 
+(use-package project
+  :config
+  (defun project-root (project)
+    (car (project-roots project))))
+
 (use-package projectile
   :after project
   :bind-keymap
