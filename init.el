@@ -31,6 +31,13 @@
 (unless (boundp 'tab-prefix-map)
   (defvar tab-prefix-map (make-sparse-keymap)))
 
+;; TODO should be moved somewhere sensible
+(use-package ansi-color ; library needed to be loaded for `ansi-color-apply-on-region'
+  :config
+  (defun use-ansi-colors ()
+      (interactive)
+    (ansi-color-apply-on-region (point-min) (point-max))))
+
 (use-package nord-theme)
 
 (use-package modus-operandi-theme)
