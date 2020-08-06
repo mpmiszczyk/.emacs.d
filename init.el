@@ -223,10 +223,15 @@
    ("C-c t R" . google-translate-at-point-reverse)
    ("C-c t r" . google-translate-query-translate-reverse)))
 
+;; TODO replace with something more configurable
+;; pair do-end
+;; pair ~~ in org-mode
 (use-package autopair
   :init
   (autopair-global-mode))
 
+
+;; TODO move to better place
 (global-set-key (kbd "<C-tab>") 'other-window)
 
 (defun find-alternative-file-with-sudo ()
