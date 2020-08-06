@@ -25,6 +25,11 @@
   (setq inhibit-startup-message t)
   (setq visible-bell t))
 
+;; TODO fixes: var used way before it is introduced.  It seems it is
+;; used in `project.el', but it needs to be defined way sooner.
+;; Remove at some point in future.
+(unless (boundp 'tab-prefix-map)
+  (defvar tab-prefix-map (make-sparse-keymap)))
 
 (use-package nord-theme)
 
