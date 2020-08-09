@@ -23,7 +23,8 @@
   (menu-bar-mode -1)
   (scroll-bar-mode -1)
   (setq inhibit-startup-message t)
-  (setq visible-bell t))
+  (setq visible-bell t)
+  (global-hl-line-mode))
 
 ;; TODO fixes: var used way before it is introduced.  It seems it is
 ;; used in `project.el', but it needs to be defined way sooner.
@@ -45,8 +46,6 @@
 (use-package zenburn-theme)
 
 (use-package modus-vivendi-theme)
-
-(global-hl-line-mode)
 
 ;;(set-default-font “Lekton-9”)
 ;;(set-face-attribute 'default nil :font "DejaVu Sans Mono-10")
@@ -85,6 +84,8 @@
   :custom
   (ag-highlight-search t)
   (ag-reuse-buffers t))
+
+(use-package auto-highlight-symbol)
 
 (use-package markdown-mode)
 
