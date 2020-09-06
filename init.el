@@ -45,7 +45,9 @@
 
 (use-package zenburn-theme)
 
-(use-package modus-vivendi-theme)
+(use-package modus-vivendi-theme
+  :config
+  (load-theme 'modus-vivendi 'no-confirm))
 
 ;;(set-default-font “Lekton-9”)
 ;;(set-face-attribute 'default nil :font "DejaVu Sans Mono-10")
