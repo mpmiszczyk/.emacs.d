@@ -151,8 +151,15 @@
 
 (use-package flyspell
   :config
-  (add-hook 'text-mode-hook #'flyspell-mode)
-  (add-hook 'prog-mode-hook #'flyspell-prog-mode))
+  (add-hook 'text-mode-hook 'flyspell-mode)
+  (add-hook 'prog-mode-hook 'flyspell-prog-mode))
+
+(use-package flyspell-correct
+  :after flyspell
+  :bind (:map flyspell-mode-map ("C-," . flyspell-correct-wrapper)))
+
+(use-package flyspell-correct-ivy
+  :after flyspell-correct)
 
 (use-package dockerfile-mode)
 (use-package docker-compose-mode)
