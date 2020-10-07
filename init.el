@@ -271,7 +271,7 @@
 
 (use-package ace-jump-buffer
     :bind
-    (("C-'" . ace-jump-buffer)))
+    (("C-\"" . ace-jump-buffer)))
 
 (use-package expand-region
   :bind
