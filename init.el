@@ -163,6 +163,7 @@
   :bind (:map flyspell-mode-map ("C-," . flyspell-correct-wrapper)))
 
 (use-package flyspell-correct-ivy
+  :after (ivy flyspell-correct)
   :after flyspell-correct)
 
 (use-package dockerfile-mode)
@@ -326,3 +327,4 @@
           (if this-win-2nd (other-window 1))))))
 
 (global-set-key (kbd "C-x |") 'toggle-window-split)
+(put 'scroll-left 'disabled nil)
