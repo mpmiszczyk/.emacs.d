@@ -135,21 +135,22 @@
   :custom
   (ispell-program-name "hunspell")
   (ispell-really-hunspell t)
-  (ispell-dictionary-alist
-   '(("american"
-      "[[:alpha:]]" "[^[:alpha:]]" "[']" nil
-      ("-d" "en_US") nil utf-8)
-     ("english"
-      "[[:alpha:]]" "[^[:alpha:]]" "[']" nil
-      ("-d" "en_GB") nil utf-8)
-     ("polish"
-      "[[:alpha:]]" "[^[:alpha:]]" "[']" nil
-      ("-d" "pl_PL") nil utf-8)
-     ("pe"
-      "[[:alpha:]]" "[^[:alpha:]]" "[']" nil
-      ("-d" "en_US,en_GB,pl_PL") nil utf-8)))
-  (ispell-dictionary "pe")
-  (ispell-hunspell-dictionary-alist ispell-dictionary-alist)
+  (setq ispell-extra-args "-d en_US,en_GB,pl_PL")
+  ;; (ispell-dictionary-alist
+  ;;  '(("american"
+  ;;     "[[:alpha:]]" "[^[:alpha:]]" "[']" nil
+  ;;     ("-d" "en_US") nil utf-8)
+  ;;    ("english"
+  ;;     "[[:alpha:]]" "[^[:alpha:]]" "[']" nil
+  ;;     ("-d" "en_GB") nil utf-8)
+  ;;    ("polish"
+  ;;     "[[:alpha:]]" "[^[:alpha:]]" "[']" nil
+  ;;     ("-d" "pl_PL") nil utf-8)
+  ;;    ("pe"
+  ;;     "[[:alpha:]]" "[^[:alpha:]]" "[']" nil
+  ;;     ("-d" "en_US,en_GB,pl_PL") nil utf-8)))
+  ;; (ispell-dictionary "pe")
+  ;; (ispell-hunspell-dictionary-alist ispell-dictionary-alist)
   :bind
   ("C-c d" . ispell-change-dictionary))
 
