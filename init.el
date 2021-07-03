@@ -55,7 +55,7 @@
 
 ;;(set-default-font “Lekton-9”)
 ;;(set-face-attribute 'default nil :font "DejaVu Sans Mono-10")
-(set-face-attribute 'default nil :font "Iosevka ss04-11")
+(set-face-attribute 'default nil :font "Iosevka ss04-11.5")
 ;;(set-face-attribute 'default nil :font "Iosevka-10") ;gggg
 
 ;; scroll one line at a time (less "jumpy" than defaults)
@@ -215,7 +215,7 @@
 
 (use-package magit
   :bind
-  ("M-M". magit-status)
+  ("M-M" . magit-status)
   :config
   (setq magit-list-refs-sortby "-committerdate")
   (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1))
