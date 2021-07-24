@@ -45,11 +45,11 @@
 
 (use-package nord-theme)
 
-(use-package modus-operandi-theme)
+(use-package modus-themes)
 
 (use-package zenburn-theme)
 
-(use-package modus-vivendi-theme
+(use-package modus-themes
   :config
   (load-theme 'modus-vivendi 'no-confirm))
 
