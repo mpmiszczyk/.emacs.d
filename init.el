@@ -284,6 +284,12 @@
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
+(use-package git-link)
+
+(use-package protobuf-mode)
+
+(use-package ripgrep)
+
 (setq erlang-indent-level 2)
 
 (defun toggle-window-split ()
