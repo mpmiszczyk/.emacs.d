@@ -51,7 +51,7 @@
 
 ;;(set-default-font “Lekton-9”)
 ;;(set-face-attribute 'default nil :font "DejaVu Sans Mono-10")
-(set-face-attribute 'default nil :font "Iosevka ss04-11.5")
+(set-face-attribute 'default nil :font "Iosevka ss04-12")
 ;;(set-face-attribute 'default nil :font "Iosevka-10") ;gggg
 
 ;; scroll one line at a time (less "jumpy" than defaults)
@@ -285,6 +285,10 @@
 (use-package protobuf-mode)
 
 (use-package ripgrep)
+
+(use-package beacon
+  :config
+  (beacon-mode 1))
 
 (setq erlang-indent-level 2)
 
