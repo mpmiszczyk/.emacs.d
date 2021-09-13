@@ -272,6 +272,10 @@
   :custom
   (org-roam-directory "~/roam")
   (org-roam-completion-everywhere t)
+  (org-roam-dailies-directory "journal/")
+  (org-roam-dailies-capture-templates
+   '(("d" "default" entry "* %<%I:%M %p>: %?"
+      :if-new (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d> %A \n"))))
   :bind (("C-c n l" . org-roam-buffer-toggle)
          ("C-c n f" . org-roam-node-find)
          ("C-c n i" . org-roam-node-insert)
