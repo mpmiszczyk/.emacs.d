@@ -24,7 +24,9 @@
   (scroll-bar-mode -1)
   (setq inhibit-startup-message t)
   (setq visible-bell t)
-  (global-hl-line-mode))
+  (global-hl-line-mode)
+  (setq ruby-insert-encoding-magic-comment nil)
+  )
 
 ;; TODO fixes: var used way before it is introduced.  It seems it is
 ;; used in `project.el', but it needs to be defined way sooner.
