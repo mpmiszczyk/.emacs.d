@@ -105,8 +105,8 @@
   (before-save . eglot-format-buffer)
   :config
   (setq eglot-auto-display-help-buffer nil)
-  (add-to-list
-   `eglot-server-programs `(ruby-mode ("solargraph" "socket" "--port" :autoport)))
+  ;; (add-to-list
+  ;;  `eglot-server-programs `(ruby-mode "solargraph" "socket" "--port" :autoport))
   (add-to-list
    `eglot-server-programs `(elixir-mode "/home/mpm/elixir_ls/release/language_server.sh")))
 
