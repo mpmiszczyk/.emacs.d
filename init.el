@@ -93,7 +93,10 @@
 
 (use-package markdown-mode)
 
-(use-package erlang)
+(use-package erlang
+  :config
+  (setq erlang-indent-level 2)
+  )
 
 (use-package elixir-mode)
 
@@ -318,8 +321,6 @@
 (use-package beacon
   :config
   (beacon-mode 1))
-
-(setq erlang-indent-level 2)
 
 (defun toggle-window-split ()
   (interactive)
