@@ -229,9 +229,17 @@
 (use-package git-gutter)
 
 (use-package google-translate
+
+(use-package google-translate
+  :ensure t
   :init
   (setq google-translate-default-source-language "pl"
         google-translate-default-target-language "en")
+  :custom
+  (google-translate-backend-method 'curl)
+  :config
+   (defun google-translate--search-tkk () "Search TKK." (list 430675 2721866130)))
+
 
   :bind
   (("C-c t T" . google-translate-at-point)
