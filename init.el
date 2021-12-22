@@ -111,7 +111,7 @@
   ;; (add-to-list
   ;;  `eglot-server-programs `(ruby-mode "solargraph" "socket" "--port" :autoport))
   (add-to-list
-   `eglot-server-programs `(elixir-mode "/home/mpm/elixir_ls/release/language_server.sh")))
+   'eglot-server-programs '(elixir-mode "/home/mpm/elixir_ls/release/language_server.sh")))
 
 (use-package project
   :config
