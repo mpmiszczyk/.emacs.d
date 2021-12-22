@@ -13,6 +13,7 @@
 
 (straight-use-package 'use-package)
 (setq straight-use-package-by-default t)
+(setq straight-allow-recipe-inheritance t)
 
 (setq custom-file (make-temp-file "emacs-custom"))
 (load custom-file)
@@ -99,6 +100,14 @@
   )
 
 (use-package elixir-mode)
+
+;; (straight-use-package
+;;   '(flymake :fork "mpmiszczyk/flymake"))
+
+;; (flymake :type git :host github :repo "emacs-straight/flymake" :files ("*" (:exclude ".git")))
+
+(use-package flymake
+  :straight (:fork "mpmiszczyk/flymake" :branch "pre-string-replace"))
 
 (use-package eglot
   :commands (eglot eglot-ensures)
