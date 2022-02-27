@@ -123,6 +123,8 @@
    'eglot-server-programs '(elixir-mode "/home/mpm/elixir_ls/release/language_server.sh")))
 
 (use-package project
+  :ensure t
+  :straight t
   :config
   (defun project-root (project)
     (car (project-roots project))))
@@ -227,6 +229,7 @@
 ;;   :hook (projectile-mode . counsel-projectile-mode))
 
 (use-package magit
+  :after (project)
   :bind
   ("M-M" . magit-status)
   :config
