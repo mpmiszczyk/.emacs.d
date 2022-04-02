@@ -315,6 +315,10 @@
   (require 'org-roam-dailies) ;; Ensure the keymap is available
   (org-roam-db-autosync-mode))
 
+(use-package org-tree-slide
+  :custom
+  (org-image-actual-width nil))
+
 (use-package elfeed)
 (use-package s)
 
