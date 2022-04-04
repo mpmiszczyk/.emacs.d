@@ -20,15 +20,24 @@
 
 (use-package emacs
   :config
+  (setq default-frame-alist '((font . "Iosevka ss04-12")
+                              (font . "Inconsolata-g-11")
+                              (font . "DejaVu Sans Mono-10")))
   (tool-bar-mode -1)
   (menu-bar-mode -1)
   (scroll-bar-mode -1)
+  ;; scroll one line at a time (less "jumpy" than defaults)
+  (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+  (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+  (setq mouse-wheel-follow-mouse nil) ;; scroll window under mouse
+  (setq scroll-step 1) ;; keyboard scroll one line at a time
   (setq inhibit-startup-message t)
   (setq visible-bell t)
+  (setq default-tab-width 2)
+  (setq-default indent-tabs-mode nil)
   (global-hl-line-mode)
   (setq ruby-insert-encoding-magic-comment nil)
-  (setq default-frame-alist '((font . "Iosevka ss04-12")
-                              (font . "DejaVu Sans Mono-10")))
+  ;; (set-face-attribute 'default nil :font "Inconsolata-g-11")
   ;; (set-face-attribute 'default nil :font "Iosevka ss04-12")
   )
 
@@ -55,12 +64,6 @@
   :config
   (load-theme 'modus-vivendi 'no-confirm))
 
-;; scroll one line at a time (less "jumpy" than defaults)
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
-(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
-(setq mouse-wheel-follow-mouse nil) ;; scroll window under mouse
-(setq scroll-step 1) ;; keyboard scroll one line at a time
-
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "google-chrome-stable")
 
@@ -68,9 +71,6 @@
 ;; note to myself:
 ;; ediff docs suck
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
-
-(setq default-tab-width 2)
-(setq-default indent-tabs-mode nil)
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
