@@ -27,6 +27,9 @@
   (setq visible-bell t)
   (global-hl-line-mode)
   (setq ruby-insert-encoding-magic-comment nil)
+  (setq default-frame-alist '((font . "Iosevka ss04-12")
+                              (font . "DejaVu Sans Mono-10")))
+  ;; (set-face-attribute 'default nil :font "Iosevka ss04-12")
   )
 
 ;; TODO fixes: var used way before it is introduced.  It seems it is
@@ -51,11 +54,6 @@
 (use-package modus-themes
   :config
   (load-theme 'modus-vivendi 'no-confirm))
-
-;;(set-default-font “Lekton-9”)
-;;(set-face-attribute 'default nil :font "DejaVu Sans Mono-10")
-(set-face-attribute 'default nil :font "Iosevka ss04-12")
-;;(set-face-attribute 'default nil :font "Iosevka-10") ;gggg
 
 ;; scroll one line at a time (less "jumpy" than defaults)
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
