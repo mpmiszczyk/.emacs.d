@@ -36,7 +36,6 @@
   (setq default-tab-width 2)
   (setq-default indent-tabs-mode nil)
   (global-hl-line-mode)
-  (setq ruby-insert-encoding-magic-comment nil)
   ;; (set-face-attribute 'default nil :font "Inconsolata-g-11")
   ;; (set-face-attribute 'default nil :font "Iosevka ss04-12")
   )
@@ -98,6 +97,11 @@
   )
 
 (use-package elixir-mode)
+
+(use-package ruby-mode
+  :custom
+  (ruby-insert-encoding-magic-comment nil)
+  )
 
 ;; (straight-use-package
 ;;   '(flymake :fork "mpmiszczyk/flymake"))
