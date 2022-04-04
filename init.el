@@ -124,12 +124,7 @@
   (add-to-list
    'eglot-server-programs '(elixir-mode "/home/mpm/elixir_ls/release/language_server.sh")))
 
-(use-package project
-  :ensure t
-  :straight t
-  :config
-  (defun project-root (project)
-    (car (project-roots project))))
+(use-package project)
 
 (use-package projectile
   :after project
