@@ -340,6 +340,12 @@
   :config
   (beacon-mode 1))
 
+(use-package terraform-mode)
+
+(use-package typescript-mode)
+
+(use-package mocha)
+
 (defun toggle-window-split ()
   (interactive)
   (if (= (count-windows) 2)
