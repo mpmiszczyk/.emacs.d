@@ -342,7 +342,9 @@
 
 (use-package terraform-mode)
 
-(use-package typescript-mode)
+(use-package typescript-mode
+  :custom
+  (typescript-indent-level 2))
 
 (use-package mocha)
 
