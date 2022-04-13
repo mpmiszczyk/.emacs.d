@@ -50,7 +50,7 @@
 (use-package ansi-color ; library needed to be loaded for `ansi-color-apply-on-region'
   :config
   (defun use-ansi-colors ()
-      (interactive)
+    (interactive)
     (ansi-color-apply-on-region (point-min) (point-max))))
 
 (use-package nord-theme)
@@ -96,11 +96,15 @@
   (setq erlang-indent-level 2)
   )
 
-(use-package elixir-mode)
+(use-package elixir-mode
+  :hook
+  (before-save . eglot-format-buffer))
 
 (use-package ruby-mode
   :custom
   (ruby-insert-encoding-magic-comment nil)
+  :hook
+  (before-save . eglot-format-buffer)
   )
 
 ;; (straight-use-package
@@ -114,15 +118,14 @@
 (use-package eglot
   :commands (eglot eglot-ensures)
   :hook
-  (elixir-mode . eglot-ensure)
-  (ruby-mode . eglot-ensure)
-  (before-save . eglot-format-buffer)
+  ((elixir-mode
+    ruby-mode
+    typescript-mode) . eglot-ensure)
   :config
   (setq eglot-auto-display-help-buffer nil)
-  ;; (add-to-list
-  ;;  `eglot-server-programs `(ruby-mode "solargraph" "socket" "--port" :autoport))
   (add-to-list
-   'eglot-server-programs '(elixir-mode "/home/mpm/elixir_ls/release/language_server.sh")))
+   'eglot-server-programs '(elixir-mode "/home/mpm/elixir_ls/release/language_server.sh"))
+  )
 
 (use-package project)
 
@@ -278,8 +281,8 @@
    ("C-M-'" . avy-goto-subword-or-word-1)))
 
 (use-package ace-jump-buffer
-    :bind
-    (("C-\"" . ace-jump-buffer)))
+  :bind
+  (("C-\"" . ace-jump-buffer)))
 
 (use-package expand-region
   :bind
@@ -325,7 +328,7 @@
   :init
   (elfeed-org)
   :after (elfeed s)
-)
+  )
 
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
