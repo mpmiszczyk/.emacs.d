@@ -34,10 +34,12 @@
   (setq inhibit-startup-message t)
   (setq visible-bell t)
   (setq default-tab-width 2)
+  (setq js-indent-level 4)
   (setq-default indent-tabs-mode nil)
   (global-hl-line-mode)
   ;; (set-face-attribute 'default nil :font "Inconsolata-g-11")
   ;; (set-face-attribute 'default nil :font "Iosevka ss04-12")
+  (term-set-escape-char ?\C-x)
   )
 
 ;; TODO fixes: var used way before it is introduced.  It seems it is
