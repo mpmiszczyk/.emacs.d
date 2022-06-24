@@ -33,9 +33,8 @@
   (setq scroll-step 1) ;; keyboard scroll one line at a time
   (setq inhibit-startup-message t)
   (setq visible-bell t)
-  (setq default-tab-width 2)
-  (setq js-indent-level 4)
   (setq-default indent-tabs-mode nil)
+  (setq-default tab-width 2)
   (global-hl-line-mode)
   ;; (set-face-attribute 'default nil :font "Inconsolata-g-11")
   ;; (set-face-attribute 'default nil :font "Iosevka ss04-12")
@@ -161,7 +160,7 @@
   (add-hook 'prog-mode-hook 'flyspell-prog-mode))
 
 (use-package flyspell-correct
-  :after flyspell
+  fter flyspell
   :bind (:map flyspell-mode-map ("C-," . flyspell-correct-wrapper)))
 
 (use-package flyspell-correct-ivy
