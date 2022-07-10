@@ -235,7 +235,11 @@
   ("M-M" . magit-status)
   :config
   (setq magit-list-refs-sortby "-committerdate")
-  (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1))
+  (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1)
+  (setq magit-diff-paint-whitespace nil)
+  (setq magit-diff-highlight-hunk-body nil)
+  (setq magit-diff-highlight-hunk-region-functions nil)
+  )
 
 (use-package git-timemachine)
 
