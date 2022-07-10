@@ -40,14 +40,18 @@
   (global-hl-line-mode)
   ;; (set-face-attribute 'default nil :font "Inconsolata-g-11")
   ;; (set-face-attribute 'default nil :font "Iosevka ss04-12")
+  )
+
+(use-package term
+  :config
   (term-set-escape-char ?\C-x)
   )
 
-;; TODO fixes: var used way before it is introduced.  It seems it is
-;; used in `project.el', but it needs to be defined way sooner.
-;; Remove at some point in future.
-(unless (boundp 'tab-prefix-map)
-  (defvar tab-prefix-map (make-sparse-keymap)))
+;; ;; TODO fixes: var used way before it is introduced.  It seems it is
+;; ;; used in `project.el', but it needs to be defined way sooner.
+;; ;; Remove at some point in future.
+;; (unless (boundp 'tab-prefix-map)
+;;   (defvar tab-prefix-map (make-sparse-keymap)))
 
 ;; TODO should be moved somewhere sensible
 (use-package ansi-color ; library needed to be loaded for `ansi-color-apply-on-region'
