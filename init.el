@@ -35,6 +35,8 @@
   (setq visible-bell t)
   (setq-default indent-tabs-mode nil)
   (setq-default tab-width 2)
+  (setq browse-url-browser-function 'browse-url-generic
+        browse-url-generic-program "google-chrome-stable")
   (global-hl-line-mode)
   ;; (set-face-attribute 'default nil :font "Inconsolata-g-11")
   ;; (set-face-attribute 'default nil :font "Iosevka ss04-12")
@@ -64,8 +66,7 @@
   :config
   (load-theme 'modus-vivendi 'no-confirm))
 
-(setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "google-chrome-stable")
+
 
 
 ;; note to myself:
