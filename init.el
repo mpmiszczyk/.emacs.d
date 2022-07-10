@@ -159,8 +159,8 @@
   (add-hook 'text-mode-hook 'flyspell-mode)
   (add-hook 'prog-mode-hook 'flyspell-prog-mode))
 
-(use-package flyspell-correct
-  fter flyspell
+(use-package flyspell-correct-avy-menu
+  :after flyspell
   :bind (:map flyspell-mode-map ("C-," . flyspell-correct-wrapper)))
 
 (use-package flyspell-correct-ivy
