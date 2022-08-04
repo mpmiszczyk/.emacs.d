@@ -388,3 +388,12 @@
 
 (global-set-key (kbd "C-x |") 'toggle-window-split)
 (put 'scroll-left 'disabled nil)
+
+
+(defun mac-srak ()
+  "Usage:  `M-x anthony-kong`"
+  (interactive)
+  (replace-regexp "‘" "'" nil (point-min) (point-max))
+  (replace-regexp "’" "'" nil (point-min) (point-max))
+  (replace-regexp "“" "\"" nil (point-min) (point-max))
+  (replace-regexp "”" "\"" nil (point-min) (point-max)))
