@@ -65,6 +65,10 @@
 (use-package modus-themes)
 
 (use-package zenburn-theme)
+(use-package nano-theme
+  ;; :config
+  ;; (load-theme 'nano-dark 'no-confirm)
+  )
 
 (use-package modus-themes
   :config
