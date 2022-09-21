@@ -128,6 +128,8 @@ is loaded dynamiclly"
   (term-set-escape-char ?\C-x)
   )
 
+(use-package vterm)
+
 ;; ;; TODO fixes: var used way before it is introduced.  It seems it is
 ;; ;; used in `project.el', but it needs to be defined way sooner.
 ;; ;; Remove at some point in future.
