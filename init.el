@@ -128,7 +128,9 @@ is loaded dynamiclly"
   (term-set-escape-char ?\C-x)
   )
 
-(use-package vterm)
+(use-package vterm
+  :config
+  (setq vterm-always-compile-module t))
 
 ;; ;; TODO fixes: var used way before it is introduced.  It seems it is
 ;; ;; used in `project.el', but it needs to be defined way sooner.
