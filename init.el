@@ -28,9 +28,7 @@
   (setq org-directory "~/Dropbox/org")
   (setq org-default-notes-file (concat org-directory "/inbox.org"))
   (setq org-log-done t)
-
-  (setq org-drill-learn-fraction 0.39)
-
+  (require 'org-tempo)
 
   (add-hook 'org-mode-hook
             '(lambda ()
@@ -81,9 +79,9 @@ is loaded dynamiclly"
   (setq org-yank-adjusted-subtrees t))
 
 (use-package org-journal
-  :after (org-mode)
+  :after (org)
   :custom
-  (org-journal-dir (concat org-directory "/journal/"))
+  (org-journal-dir "~/Dropbox/org/journal/")
   (org-journal-tag-alist '(("personal" . ?p)
                            ("dreams" . ?D)
                            ("memories" . ?m)
@@ -93,7 +91,6 @@ is loaded dynamiclly"
                            ("work" . ?w)
                            ("daily" . ?d)
                            ("fresha" . ?f))))
-
 
 
 (setq custom-file (make-temp-file "emacs-custom"))
