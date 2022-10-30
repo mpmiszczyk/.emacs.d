@@ -154,7 +154,14 @@ is loaded dynamiclly"
 
 (use-package modus-themes
   :config
-  (load-theme 'modus-vivendi 'no-confirm))
+  (if (daemonp)
+      (add-hook 'after-make-frame-functions
+                (lambda (frame)
+                  (with-selected-frame frame
+                    (load-theme 'modus-vivendi 'no-confirm))))
+    (load-theme 'modus-vivendi 'no-confirm)))
+
+  ;; (load-theme 'modus-vivendi 'no-confirm))
 
 
 
