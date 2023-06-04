@@ -438,7 +438,7 @@ is loaded dynamiclly"
 
 (use-package protobuf-mode)
 
-(use-package ripgrep)
+(use-package rg)
 
 (use-package beacon
   :config
