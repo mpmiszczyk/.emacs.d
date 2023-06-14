@@ -143,6 +143,15 @@ is loaded dynamiclly"
     (interactive)
     (ansi-color-apply-on-region (point-min) (point-max))))
 
+(use-package golden-ratio
+  :config
+  (golden-ratio-mode 1)
+  (setq golden-ratio-auto-scale nil
+        golden-ratio-adjust-factor 0.2
+        golden-ratio-wide-adjust-factor 0.2)
+  )
+  
+
 (use-package nord-theme)
 
 (use-package modus-themes)
