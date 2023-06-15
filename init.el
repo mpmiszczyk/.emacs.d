@@ -154,6 +154,7 @@ is loaded dynamiclly"
 (use-package zoom
   :config
   (zoom-mode t)
+  (setq zoom-size '(105 . 20))
   )
 
   
