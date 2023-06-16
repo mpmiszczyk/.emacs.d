@@ -157,7 +157,9 @@ is loaded dynamiclly"
   (setq zoom-size '(105 . 20))
   )
 
-  
+(use-package copilot
+  :straight (:host github :repo "zerolfx/copilot.el" :files ("dist" "*.el"))
+  :ensure t)  
 
 (use-package nord-theme)
 
