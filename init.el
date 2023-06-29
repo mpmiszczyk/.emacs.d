@@ -118,7 +118,8 @@ is loaded dynamiclly"
   (global-hl-line-mode)
   ;; (set-face-attribute 'default nil :font "Inconsolata-g-11")
   ;; (set-face-attribute 'default nil :font "Iosevka ss04-12")
-  ;; (set-face-attribute 'default nil :font "Iosevka ss04-18")
+  ;; (set-face-attribute 'default nil :font "Iosevka ss04-14")
+  ;; (set-face-attribute 'default nil :font "Iosevka ss04-16")
   )
 
 (use-package term
