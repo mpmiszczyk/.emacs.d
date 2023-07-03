@@ -243,7 +243,7 @@ is loaded dynamiclly"
   :config
   (setq eglot-auto-display-help-buffer nil)
   (add-to-list
-   'eglot-server-programs '(elixir-mode "/home/mpm/elixir_ls/release/launch.sh"))
+   'eglot-server-programs '(elixir-mode "/home/mpm/elixir_ls/release/language_server.sh"))
   )
 
 (use-package project)
