@@ -359,6 +359,9 @@ is loaded dynamiclly"
   (setq magit-diff-highlight-hunk-region-functions nil)
   )
 
+(use-package forge
+  :after magit)
+
 (use-package git-timemachine)
 
 (use-package git-gutter)
@@ -435,6 +438,14 @@ is loaded dynamiclly"
   :config
   (require 'org-roam-dailies) ;; Ensure the keymap is available
   (org-roam-db-autosync-mode))
+
+(use-package org-roam-timestamps
+  :after org-roam
+  :config (org-roam-timestamps-mode)
+  )
+
+(use-package org-roam-ui
+  :after org-roam)
 
 (use-package org-tree-slide
   :custom
