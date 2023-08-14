@@ -465,7 +465,9 @@ is loaded dynamiclly"
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
-(use-package git-link)
+(use-package git-link
+  :config
+  (setq git-link-use-commit t))
 
 (use-package protobuf-mode)
 
