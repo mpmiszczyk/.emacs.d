@@ -359,8 +359,9 @@ is loaded dynamiclly"
   (setq magit-diff-highlight-hunk-region-functions nil)
   )
 
-(use-package forge
-  :after magit)
+;; disabled it because the 
+;; (use-package forge
+;;   :after magit)
 
 (use-package git-timemachine)
 
