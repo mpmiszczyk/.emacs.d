@@ -98,7 +98,7 @@ is loaded dynamiclly"
 
 (use-package emacs
   :config
-  (setq default-frame-alist '((font . "Iosevka ss04-12")
+  (setq default-frame-alist '((font . "Iosevka Term ss04-12")
                               (font . "Inconsolata-g-11")
                               (font . "DejaVu Sans Mono-10")))
   (tool-bar-mode -1)
@@ -117,10 +117,11 @@ is loaded dynamiclly"
         browse-url-generic-program "google-chrome-stable")
   (global-hl-line-mode)
   ;; (set-face-attribute 'default nil :font "Inconsolata-g-11")
-  ;; (set-face-attribute 'default nil :font "Iosevka ss04-12")
-  ;; (set-face-attribute 'default nil :font "Iosevka ss04-14")
-  ;; (set-face-attribute 'default nil :font "Iosevka ss04-16")
-  )
+  ;; (set-face-attribute 'default nil :font "Iosevka Term ss04-12")
+  ;; (set-face-attribute 'default nil :font "Iosevka Term ss04-13")
+  ;; (set-face-attribute 'default nil :font "Iosevka Term ss04-14")
+  ;; (set-face-attribute 'default nil :font "Iosevka Term ss04-16")
+ )
 
 (use-package term
   :config
