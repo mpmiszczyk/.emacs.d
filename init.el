@@ -129,7 +129,17 @@ is loaded dynamiclly"
 
 (use-package vterm
   :config
-  (setq vterm-always-compile-module t))
+  (setq vterm-always-compile-module t)
+  )
+
+(use-package with-editor
+  :after (vterm)
+  :hook
+  ((shell-mode
+    eshell-mode
+    term-mode
+    vterm-mode) . with-editor-export-editor)
+  )
 
 ;; ;; TODO fixes: var used way before it is introduced.  It seems it is
 ;; ;; used in `project.el', but it needs to be defined way sooner.
