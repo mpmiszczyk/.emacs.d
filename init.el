@@ -243,18 +243,22 @@ is loaded dynamiclly"
 ;; (flymake :type git :host github :repo "emacs-straight/flymake" :files ("*" (:exclude ".git")))
 
 (use-package flymake
-  :straight (:fork "mpmiszczyk/flymake" :branch "pre-string-replace"))
+  :bind
+  (("M-n" . flymake-goto-next-error)
+   ("M-p" . flymake-goto-prev-error))
+  )
 
 (use-package eglot
   :commands (eglot eglot-ensures)
   :hook
-  ((elixir-mode
+  ((org-mode
+    elixir-mode
     ruby-mode
     typescript-mode) . eglot-ensure)
   :config
   (setq eglot-auto-display-help-buffer nil)
-  (add-to-list
-   'eglot-server-programs '(elixir-mode "/home/mpm/elixir_ls/release/language_server.sh"))
+  (add-to-list 'eglot-server-programs '(elixir-mode "/home/mpm/elixir_ls/release/language_server.sh"))
+  (add-to-list 'eglot-server-programs '(org-mode "/home/mpm/source/vale-ls/target/release/vale-ls"))
   )
 
 (use-package project)
