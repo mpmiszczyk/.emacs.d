@@ -123,6 +123,12 @@ is loaded dynamiclly"
   ;; (set-face-attribute 'default nil :font "Iosevka Term ss04-16")
  )
 
+(use-package string-inflection
+  :bind
+  (("C-c C-u" . string-inflection-lower-camelcase)
+   ("C-c C-l" . string-inflection-underscore))
+  )
+
 (use-package term
   :config
   (term-set-escape-char ?\C-x)
