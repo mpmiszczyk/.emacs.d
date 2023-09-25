@@ -312,10 +312,7 @@ is loaded dynamiclly"
   (before-save . eglot-format-buffer)
   )
 
-;; (straight-use-package
-;;   '(flymake :fork "mpmiszczyk/flymake"))
-
-;; (flymake :type git :host github :repo "emacs-straight/flymake" :files ("*" (:exclude ".git")))
+(use-package jest-test-mode)
 
 (use-package flymake
   :bind
@@ -330,7 +327,11 @@ is loaded dynamiclly"
     elixir-mode
     elixir-ts-mode
     ruby-mode
-    typescript-mode) . eglot-ensure)
+    ruby-ts-mode
+    typescript-mode
+    typescript-ts-mode
+    tsx-ts-mode
+    ) . eglot-ensure)
   :config
   (setq eglot-auto-display-help-buffer nil)
   (add-to-list 'eglot-server-programs '(elixir-mode "/home/mpm/elixir_ls/release/language_server.sh"))
