@@ -94,6 +94,15 @@ is loaded dynamiclly"
 
 (use-package elixir-ts-mode)
 
+(use-package el-patch
+  :straight (el-patch :type git :host github :repo "radian-software/el-patch"))
+
+(use-package treesit
+  :straight (:type built-in))
+
+(use-package ts-movement
+  :straight (ts-movement :type git :host github :repo "haritkapadia/ts-movement"))
+
 ;; (use-package treesitter
 ;;   :preface
 ;;   (defun mp-setup-install-grammars ()
