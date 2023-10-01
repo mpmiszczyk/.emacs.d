@@ -504,10 +504,13 @@ is loaded dynamiclly"
              buffer-file-name))))
 (global-set-key (kbd "C-x C-r") 'find-alternative-file-with-sudo)
 
+(use-package ace-window
+  :bind
+  (("C-M-'" . ace-window)))
+
 (use-package avy
   :bind
-  (("C-'" . avy-goto-char-timer)
-   ("C-M-'" . avy-goto-subword-or-word-1)))
+  (("C-'" . avy-goto-char-timer)))
 
 (use-package ace-jump-buffer
   :bind
