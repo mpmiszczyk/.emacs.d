@@ -175,25 +175,27 @@ is loaded dynamiclly"
 
 (use-package emacs
   :config
-  (setq default-frame-alist '((font . "Iosevka Term ss04-12")
-                              (font . "Inconsolata-g-11")
-                              (font . "DejaVu Sans Mono-10")))
   (tool-bar-mode -1)
   (menu-bar-mode -1)
   (scroll-bar-mode -1)
-  ;; scroll one line at a time (less "jumpy" than defaults)
-  (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
-  (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
-  (setq mouse-wheel-follow-mouse nil) ;; scroll window under mouse
-  (setq scroll-step 1) ;; keyboard scroll one line at a time
-  (setq inhibit-startup-message t)
-  (setq visible-bell t)
+  (global-hl-line-mode)
   (setq-default indent-tabs-mode nil)
   (setq-default tab-width 2)
-  (setq browse-url-browser-function 'browse-url-generic
+  :custom
+  (default-frame-alist '((font . "Iosevka Term ss04-12")
+                              (font . "Inconsolata-g-11")
+                              (font . "DejaVu Sans Mono-10")))
+
+  ;; scroll one line at a time (less "jumpy" than defaults)
+  (mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+  (mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+  (mouse-wheel-follow-mouse nil) ;; scroll window under mouse
+  (scroll-step 1) ;; keyboard scroll one line at a time
+  (inhibit-startup-message t)
+  (visible-bell t)
+  (browse-url-browser-function 'browse-url-generic
         browse-url-generic-program "google-chrome-stable")
-  (global-hl-line-mode)
-  (setq global-subword-mode t)
+  (global-subword-mode t)
   ;; (set-face-attribute 'default nil :font "Inconsolata-g-11")
   ;; (set-face-attribute 'default nil :font "Iosevka Term ss04-12")
   ;; (set-face-attribute 'default nil :font "Iosevka Term ss04-13")
@@ -250,8 +252,10 @@ is loaded dynamiclly"
 (use-package zoom
   :config
   (zoom-mode t)
-  (setq zoom-size '(105 . 20))
-  (setq zoom-ignored-major-modes '(dired-mode markdown-mode ediff-mode))
+  :custom
+  (zoom-size '(105 . 20))
+  (zoom-ignored-major-modes '(dired-mode markdown-mode ediff-mode))
+  (zoom-ignored-buffer-names '("*Ediff Control Panel*"))
   )
 
 (use-package copilot
