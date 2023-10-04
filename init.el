@@ -193,6 +193,7 @@ is loaded dynamiclly"
   (setq browse-url-browser-function 'browse-url-generic
         browse-url-generic-program "google-chrome-stable")
   (global-hl-line-mode)
+  (setq global-subword-mode t)
   ;; (set-face-attribute 'default nil :font "Inconsolata-g-11")
   ;; (set-face-attribute 'default nil :font "Iosevka Term ss04-12")
   ;; (set-face-attribute 'default nil :font "Iosevka Term ss04-13")
@@ -357,7 +358,8 @@ is loaded dynamiclly"
   (add-to-list 'eglot-server-programs '(elixir-ts-mode "/home/mpm/elixir_ls/release/language_server.sh"))
   ;; (add-to-list 'eglot-server-programs '(org-mode "/home/mpm/source/vale-ls/target/release/vale-ls"))
   :bind
-  (("M-RET" . eglot-code-actions))
+  (("M-RET" . eglot-code-actions)
+   ("C-x C-d" . eglot-code-actions))
   )
 
 (use-package project)
@@ -464,7 +466,8 @@ is loaded dynamiclly"
 (use-package magit
   :after (project)
   :bind
-  ("M-M" . magit-status)
+  (("M-M" . magit-status) ;; depreciated
+   ("C-x m" . magit-status))
   :config
   (setq magit-list-refs-sortby "-committerdate")
   (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1)
