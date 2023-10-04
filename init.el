@@ -325,7 +325,8 @@ is loaded dynamiclly"
 (use-package flymake
   :bind
   (("M-n" . flymake-goto-next-error)
-   ("M-p" . flymake-goto-prev-error))
+   ("M-p" . flymake-goto-prev-error)
+   ("C-x M-d" . flymake-show-project-diagnostics))
   )
 
 
@@ -355,6 +356,8 @@ is loaded dynamiclly"
   (add-to-list 'eglot-server-programs '(elixir-mode "/home/mpm/elixir_ls/release/language_server.sh"))
   (add-to-list 'eglot-server-programs '(elixir-ts-mode "/home/mpm/elixir_ls/release/language_server.sh"))
   ;; (add-to-list 'eglot-server-programs '(org-mode "/home/mpm/source/vale-ls/target/release/vale-ls"))
+  :bind
+  (("M-RET" . eglot-code-actions))
   )
 
 (use-package project)
