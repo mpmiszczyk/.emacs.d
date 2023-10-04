@@ -251,6 +251,7 @@ is loaded dynamiclly"
   :config
   (zoom-mode t)
   (setq zoom-size '(105 . 20))
+  (setq zoom-ignored-major-modes '(dired-mode markdown-mode ediff-mode))
   )
 
 (use-package copilot
