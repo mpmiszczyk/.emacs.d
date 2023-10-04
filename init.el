@@ -328,6 +328,15 @@ is loaded dynamiclly"
    ("M-p" . flymake-goto-prev-error))
   )
 
+
+(use-package eglot-grammarly
+  :straight (:host github :repo "emacs-grammarly/eglot-grammarly")
+  :after eglot
+  :defer t  ; defer package loading
+  :hook ((text-mode markdown-mode). (lambda ()
+                                      (require 'eglot-grammarly)
+                                      (eglot-ensure))))
+
 (use-package eglot
   :commands (eglot eglot-ensures)
   :hook
@@ -345,7 +354,7 @@ is loaded dynamiclly"
   (setq eglot-auto-display-help-buffer nil)
   (add-to-list 'eglot-server-programs '(elixir-mode "/home/mpm/elixir_ls/release/language_server.sh"))
   (add-to-list 'eglot-server-programs '(elixir-ts-mode "/home/mpm/elixir_ls/release/language_server.sh"))
-  (add-to-list 'eglot-server-programs '(org-mode "/home/mpm/source/vale-ls/target/release/vale-ls"))
+  ;; (add-to-list 'eglot-server-programs '(org-mode "/home/mpm/source/vale-ls/target/release/vale-ls"))
   )
 
 (use-package project)
