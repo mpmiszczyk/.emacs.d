@@ -326,7 +326,11 @@ is loaded dynamiclly"
   (before-save . eglot-format-buffer)
   )
 
-(use-package jest-test-mode)
+(use-package jest-test-mode
+  :commands jest-test-mode
+  :hook
+  (typescript-mode typescript-ts-mode js-ts-mode typescript-tsx-mode)
+  )
 
 (use-package flymake
   :bind
