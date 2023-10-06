@@ -386,7 +386,7 @@ is loaded dynamiclly"
   (add-to-list 'project-find-functions 'my-projectile-project-find-function))
 
 (use-package yasnippet
-  :hook (elixir-mode . yas-minor-mode))
+  :hook (prog-mode))
 
 (use-package exunit)
 
