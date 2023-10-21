@@ -18,7 +18,8 @@
 
 (straight-use-package 'org)
 (use-package org
-  :bind (("C-c l" . org-store-link)
+  :bind (("C-c t n" . org-toggle-narrow-to-subtree)
+         ("C-c l" . org-store-link)
          ("C-c a" . org-agenda)
          ("C-c c" . org-capture)
          :map org-mode-map
@@ -193,8 +194,8 @@ is loaded dynamiclly"
   (scroll-step 1) ;; keyboard scroll one line at a time
   (inhibit-startup-message t)
   (visible-bell t)
-  (browse-url-browser-function 'browse-url-generic
-        browse-url-generic-program "google-chrome-stable")
+  (browse-url-browser-function 'browse-url-generic)
+  (browse-url-generic-program "google-chrome-stable")
   (global-subword-mode t)
   ;; (set-face-attribute 'default nil :font "Inconsolata-g-11")
   ;; (set-face-attribute 'default nil :font "Iosevka Term ss04-12")
@@ -256,6 +257,8 @@ is loaded dynamiclly"
   (zoom-size '(105 . 20))
   (zoom-ignored-major-modes '(dired-mode markdown-mode ediff-mode))
   (zoom-ignored-buffer-names '("*Ediff Control Panel*"))
+  :bind
+  (("C-x C-z" . zoom-mode))
   )
 
 (use-package copilot
@@ -315,9 +318,7 @@ is loaded dynamiclly"
   (setq erlang-indent-level 2)
   )
 
-(use-package elixir-mode
-  :hook
-  (before-save . eglot-format-buffer))
+(use-package elixir-mode)
 
 (use-package ruby-mode
   :custom
@@ -368,7 +369,7 @@ is loaded dynamiclly"
   ;; (add-to-list 'eglot-server-programs '(org-mode "/home/mpm/source/vale-ls/target/release/vale-ls"))
   :bind
   (("M-RET" . eglot-code-actions)
-   ("C-x C-d" . eglot-code-actions))
+   ("C-x C-<return>" . eglot-code-actions))
   )
 
 (use-package project)
@@ -386,7 +387,7 @@ is loaded dynamiclly"
   (add-to-list 'project-find-functions 'my-projectile-project-find-function))
 
 (use-package yasnippet
-  :hook (prog-mode))
+  :hook (elixir-mode))
 
 (use-package exunit)
 
