@@ -263,7 +263,20 @@ is loaded dynamiclly"
 
 (use-package copilot
   :straight (:host github :repo "zerolfx/copilot.el" :files ("dist" "*.el"))
-  :ensure t)
+  :ensure t
+  :custom
+  (copilot-indent-warning-suppress t)
+  :hook ((prog-mode) . copilot-mode)
+  :bind (("C-M-i" . copilot-complete)
+         ("C-M-`" . copilot-accept-completion)
+         ("M-`" . copilot-accept-completion-by-word)
+         )
+  )
+
+(use-package gptel
+  :custom
+  (gptel-default-mode 'org-mode)
+  )
 
 (use-package nord-theme)
 
@@ -341,13 +354,13 @@ is loaded dynamiclly"
   )
 
 
-(use-package eglot-grammarly
-  :straight (:host github :repo "emacs-grammarly/eglot-grammarly")
-  :after eglot
-  :defer t  ; defer package loading
-  :hook ((text-mode markdown-mode). (lambda ()
-                                      (require 'eglot-grammarly)
-                                      (eglot-ensure))))
+;; (use-package eglot-grammarly
+;;   :straight (:host github :repo "emacs-grammarly/eglot-grammarly")
+;;   :after eglot
+;;   :defer t  ; defer package loading
+;;   :hook ((text-mode markdown-mode). (lambda ()
+;;                                       (require 'eglot-grammarly)
+;;                                       (eglot-ensure))))
 
 (use-package eglot
   :commands (eglot eglot-ensures)
@@ -362,8 +375,12 @@ is loaded dynamiclly"
     typescript-ts-mode
     tsx-ts-mode
     ) . eglot-ensure)
+  :custom
+  (eglot-auto-display-help-buffer nil)
+  (eglot-connect-timeout 100)
+  (eglot-sync-connect 30)
+  (eglot-extend-to-xref t)
   :config
-  (setq eglot-auto-display-help-buffer nil)
   (add-to-list 'eglot-server-programs '(elixir-mode "/home/mpm/elixir_ls/release/language_server.sh"))
   (add-to-list 'eglot-server-programs '(elixir-ts-mode "/home/mpm/elixir_ls/release/language_server.sh"))
   ;; (add-to-list 'eglot-server-programs '(org-mode "/home/mpm/source/vale-ls/target/release/vale-ls"))
@@ -517,10 +534,6 @@ is loaded dynamiclly"
   :init
   (autopair-global-mode))
 
-
-;; TODO move to better place
-(global-set-key (kbd "<C-tab>") 'other-window)
-
 (defun find-alternative-file-with-sudo ()
   (interactive)
   (when buffer-file-name
@@ -594,7 +607,7 @@ is loaded dynamiclly"
   )
 
 (use-package rainbow-delimiters
-  :hook (prog-mode . rainbow-delimiters-mode))
+  :hook ((prog-mode) . rainbow-delimiters-mode))
 
 (use-package git-link
   :config
