@@ -268,8 +268,8 @@ is loaded dynamiclly"
   (copilot-indent-warning-suppress t)
   :hook ((prog-mode) . copilot-mode)
   :bind (("C-M-i" . copilot-complete)
-         ("C-M-`" . copilot-accept-completion)
-         ("M-`" . copilot-accept-completion-by-word)
+         ("M-I" . copilot-accept-completion)
+         ("M-i" . copilot-accept-completion-by-word)
          )
   )
 
