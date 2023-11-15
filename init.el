@@ -1,3 +1,4 @@
+
 (defvar bootstrap-version)
 (let ((bootstrap-file
        (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
@@ -266,10 +267,13 @@ is loaded dynamiclly"
   :ensure t
   :custom
   (copilot-indent-warning-suppress t)
+  (qcopilot-idle-delay 5)
   :hook ((prog-mode) . copilot-mode)
-  :bind (("C-M-i" . copilot-complete)
-         ("M-I" . copilot-accept-completion)
-         ("M-i" . copilot-accept-completion-by-word)
+  :bind (("C-o" . copilot-complete)
+         ("C-M-o" . copilot-accept-completion)
+         ("M-o" . copilot-accept-completion-by-word)
+         ("M-O" . copilot-next-completion)
+         ("C-O" . copilot-previous-completion)
          )
   )
 
