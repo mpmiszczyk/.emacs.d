@@ -272,8 +272,8 @@ is loaded dynamiclly"
   :bind (("C-o" . copilot-complete)
          ("C-M-o" . copilot-accept-completion)
          ("M-o" . copilot-accept-completion-by-word)
-         ("M-O" . copilot-next-completion)
-         ("C-O" . copilot-previous-completion)
+         ("M-S-o" . copilot-next-completion)
+         ("C-S-O" . copilot-previous-completion)
          )
   )
 
