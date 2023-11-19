@@ -1,4 +1,3 @@
-
 (defvar bootstrap-version)
 (let ((bootstrap-file
        (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
@@ -16,7 +15,6 @@
 (setq straight-use-package-by-default t)
 (setq straight-allow-recipe-inheritance t)
 
-
 (straight-use-package 'org)
 (use-package org
   :bind (("C-c t n" . org-toggle-narrow-to-subtree)
@@ -31,6 +29,15 @@
   (setq org-default-notes-file (concat org-directory "/inbox.org"))
   (setq org-log-done t)
   (require 'org-tempo)
+  (require 'org-protocol)
+  
+  (setq org-capture-templates
+        `(
+	        ("p" "Protocol" entry (file+headline "~/roam/20231119151635-capture.org" "Inbox")
+           "* %^{Title}\nSource: %u, %c\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n%?")
+	        ("L" "Protocol Link" entry (file+headline "~/roam/20231119151635-capture.org" "Inbox")
+           "* %? [[%:link][%:description]] \nCaptured On: %U")
+          ))
 
   (add-hook 'org-mode-hook
             '(lambda ()
@@ -39,6 +46,7 @@
                (org-indent-mode)
                (rainbow-delimiters-mode-disable)
                (add-hook 'kill-emacs-hook 'org-clock-out-on-exit)))
+
 
   (defun org-clock-out-on-exit ()
     "Closes active clock when exiting emacs;
