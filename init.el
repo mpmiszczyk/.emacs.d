@@ -290,28 +290,30 @@ is loaded dynamiclly"
   (gptel-default-mode 'org-mode)
   )
 
-(use-package nord-theme)
-
-(use-package modus-themes)
-
-(use-package zenburn-theme)
-(use-package nano-theme
-  ;; :config
-  ;; (load-theme 'nano-dark 'no-confirm)
+;; (use-package nord-theme)
+;; (use-package zenburn-theme)
+;; (use-package nano-theme
+;;   ;; :config
+;;   ;; (load-theme 'nano-dark 'no-confirm)
+;;   )
+;; (use-package cybercafe-theme
+;;   ;; :config
+;;   ;; (load-theme 'cybercafe 'no-confirm)
+;;   )
+(use-package color-theme-sanityinc-tomorrow
+  :config
+  (load-theme 'sanityinc-tomorrow-night 'no-confirm)
   )
 
-(use-package modus-themes
-  :config
-  (if (daemonp)
-      (add-hook 'after-make-frame-functions
-                (lambda (frame)
-                  (with-selected-frame frame
-                    (load-theme 'modus-vivendi 'no-confirm))))
-    (load-theme 'modus-vivendi 'no-confirm)))
-
-  ;; (load-theme 'modus-vivendi 'no-confirm))
-
-
+;; (use-package modus-themes
+;;   ;; :config
+;;   ;; (if (daemonp)
+;;   ;;     (add-hook 'after-make-frame-functions
+;;   ;;               (lambda (frame)
+;;   ;;                 (with-selected-frame frame
+;;   ;;                   (load-theme 'nono 'no-confirm))))
+;;   ;;   (load-theme 'modus-vivendi 'no-confirm))
+;;   )
 
 
 ;; note to myself:
