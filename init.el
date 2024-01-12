@@ -192,8 +192,8 @@ is loaded dynamiclly"
   (setq-default indent-tabs-mode nil)
   (setq-default tab-width 2)
   :custom
-  (default-frame-alist '((font . "Iosevka Term ss04-12")
-                              (font . "Inconsolata-g-11")
+  (default-frame-alist '((font . "Iosevka Term-12")
+                             (font . "Inconsolata-g-11")
                               (font . "DejaVu Sans Mono-10")))
 
   ;; scroll one line at a time (less "jumpy" than defaults)
@@ -207,10 +207,11 @@ is loaded dynamiclly"
   (browse-url-generic-program "google-chrome-stable")
   (global-subword-mode t)
   ;; (set-face-attribute 'default nil :font "Inconsolata-g-11")
-  ;; (set-face-attribute 'default nil :font "Iosevka Term ss04-12")
-  ;; (set-face-attribute 'default nil :font "Iosevka Term ss04-13")
-  ;; (set-face-attribute 'default nil :font "Iosevka Term ss04-14")
-  ;; (set-face-attribute 'default nil :font "Iosevka Term ss04-16")
+  ;; (set-face-attribute 'default nil :font "Iosevka Term-12")
+  ;; (set-face-attribute 'default nil :font "Iosevka Term-12")
+  ;; (set-face-attribute 'default nil :font "Iosevka Term-13")
+  ;; (set-face-attribute 'default nil :font "Iosevka Term-14")
+  ;; (set-face-attribute 'default nil :font "Iosevka Term-16")
  )
 
 (use-package string-inflection
