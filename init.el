@@ -121,7 +121,9 @@ is loaded dynamiclly"
                (python "https://github.com/tree-sitter/tree-sitter-python")
                (tsx . ("https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src"))
                (yaml "https://github.com/ikatyang/tree-sitter-yaml")
-               (elixir "https://github.com/elixir-lang/tree-sitter-elixir")))
+               (elixir "https://github.com/elixir-lang/tree-sitter-elixir")
+               (heex "https://github.com/phoenixframework/tree-sitter-heex")
+               ))
       (add-to-list 'treesit-language-source-alist grammar)
       ;; Only install `grammar' if we don't already have it
       ;; installed. However, if you want to *update* a grammar then
@@ -396,8 +398,8 @@ is loaded dynamiclly"
   (eglot-sync-connect 30)
   (eglot-extend-to-xref t)
   :config
-  (add-to-list 'eglot-server-programs '(elixir-mode "/home/mpm/elixir_ls/release/language_server.sh"))
-  (add-to-list 'eglot-server-programs '(elixir-ts-mode "/home/mpm/elixir_ls/release/language_server.sh"))
+  (add-to-list 'eglot-server-programs '(elixir-mode "/home/mpm/src/elixir-ls/release/language_server.sh"))
+  (add-to-list 'eglot-server-programs '(elixir-ts-mode "/home/mpm/src/elixir-ls/release/language_server.sh"))
   ;; (add-to-list 'eglot-server-programs '(org-mode "/home/mpm/source/vale-ls/target/release/vale-ls"))
   :bind
   (("M-RET" . eglot-code-actions)
