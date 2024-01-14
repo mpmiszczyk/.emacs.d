@@ -20,3 +20,5 @@
 /multisession/
 /forge-database.sqlite
 /.org-id-locations
+/org-roam.db
+/projectile-bookmarks.eld
