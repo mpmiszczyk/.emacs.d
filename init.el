@@ -277,7 +277,7 @@ is loaded dynamiclly"
   :straight (:host github :repo "zerolfx/copilot.el" :files ("dist" "*.el"))
   :ensure t
   :custom
-  (copilot-indent-warning-suppress t)
+  (copilot-indent-warning-disable t)
   (qcopilot-idle-delay 5)
   :hook ((prog-mode) . copilot-mode)
   :bind (("C-o" . copilot-complete)
@@ -327,6 +327,8 @@ is loaded dynamiclly"
 
 (use-package exec-path-from-shell
   :config
+  (exec-path-from-shell-copy-env "GUIX_PROFILE")
+  (exec-path-from-shell-copy-env "KERL_CONFIGURE_OPTIONS")
   (exec-path-from-shell-initialize))
 
 (use-package peep-dired
