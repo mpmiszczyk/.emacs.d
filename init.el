@@ -416,6 +416,7 @@ is loaded dynamiclly"
   ("C-c p" . projectile-command-map)
   :config
   (setq projectile-completion-system 'ivy)
+  (setq projectile-git-submodule-command nil)
   (projectile-mode +1)
   (defun my-projectile-project-find-function (dir)
     (let ((root (projectile-project-root dir)))
