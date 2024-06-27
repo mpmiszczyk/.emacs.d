@@ -649,6 +649,9 @@ is loaded dynamiclly"
 
 (use-package mocha)
 
+(use-package nix-mode)
+(use-package nix-ts-mode)
+
 (defun toggle-window-split ()
   (interactive)
   (if (= (count-windows) 2)
