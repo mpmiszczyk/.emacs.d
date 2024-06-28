@@ -194,9 +194,9 @@ is loaded dynamiclly"
   (setq-default indent-tabs-mode nil)
   (setq-default tab-width 2)
   :custom
-  (default-frame-alist '((font . "Iosevka Term-12")
-                             (font . "Inconsolata-g-11")
-                              (font . "DejaVu Sans Mono-10")))
+  (default-frame-alist '((font . "Iosevka Term Nerd Font-12")
+                         (font . "Iosevka Nerd Font-12")
+                         (font . "Inconsolata Nerd Font-g-11")))
 
   ;; scroll one line at a time (less "jumpy" than defaults)
   (mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
@@ -277,7 +277,7 @@ is loaded dynamiclly"
   :straight (:host github :repo "zerolfx/copilot.el" :files ("dist" "*.el"))
   :ensure t
   :custom
-  (copilot-indent-warning-disable t)
+  (copilot-indent-offset-warning-disable t)
   (qcopilot-idle-delay 5)
   :hook ((prog-mode) . copilot-mode)
   :bind (("C-o" . copilot-complete)
