@@ -1,19 +1,31 @@
 (defvar bootstrap-version)
 (let ((bootstrap-file
-       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
-      (bootstrap-version 5))
+       (expand-file-name
+        "straight/repos/straight.el/bootstrap.el"
+        (or (bound-and-true-p straight-base-dir)
+            user-emacs-directory)))
+      (bootstrap-version 7))
   (unless (file-exists-p bootstrap-file)
     (with-current-buffer
         (url-retrieve-synchronously
-         "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
          'silent 'inhibit-cookies)
       (goto-char (point-max))
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
-(straight-use-package 'use-package)
-(setq straight-use-package-by-default t)
-(setq straight-allow-recipe-inheritance t)
+;; (setq package-enable-at-startup nil)
+;; (straight-use-package 'use-package)
+;; (setq straight-use-package-by-default t)
+;; (setq straight-allow-recipe-inheritance t)
+
+(use-package straight
+  :custom
+  ;; add project and flymake to the pseudo-packages variable so straight.el doesn't download a separate version than what eglot downloads.
+  (straight-built-in-pseudo-packages '(emacs nadvice python image-mode project flymake xref))
+  (straight-use-package-by-default t)
+  (straight-allow-recipe-inheritance t)
+  (package-enable-at-startup nil))
 
 (straight-use-package 'org)
 (use-package org
@@ -194,7 +206,7 @@ is loaded dynamiclly"
   (setq-default indent-tabs-mode nil)
   (setq-default tab-width 2)
   :custom
-  (default-frame-alist '((font . "Iosevka Term Nerd Font-12")
+  (default-frame-alist '((font . "Iosevka Term Nerd Font-13")
                          (font . "Iosevka Nerd Font-12")
                          (font . "Inconsolata Nerd Font-g-11")))
 
@@ -208,8 +220,10 @@ is loaded dynamiclly"
   (browse-url-browser-function 'browse-url-generic)
   (browse-url-generic-program "google-chrome-stable")
   (global-subword-mode t)
-  ;; (set-face-attribute 'default nil :font "Inconsolata-g-11")
-  ;; (set-face-attribute 'default nil :font "Iosevka Term-12")
+  ;; (set-face-attribute 'default nil :font "Inconsolata Nerd Font-g-12")
+  ;; (set-face-attribute 'default nil :font "Inconsolata Nerd Font-14")
+  ;; (set-face-attribute 'default nil :font "Iosevka Term Nerd Font-14")
+  ;; (set-face-attribute 'default nil :font "Iosevka Nerd Font-13")
   ;; (set-face-attribute 'default nil :font "Iosevka Term-12")
   ;; (set-face-attribute 'default nil :font "Iosevka Term-13")
   ;; (set-face-attribute 'default nil :font "Iosevka Term-14")
@@ -382,6 +396,7 @@ is loaded dynamiclly"
 ;;                                       (eglot-ensure))))
 
 (use-package eglot
+  :after (projectile project)
   :commands (eglot eglot-ensures)
   :hook
   ((org-mode
@@ -393,15 +408,15 @@ is loaded dynamiclly"
     typescript-mode
     typescript-ts-mode
     tsx-ts-mode
-    ) . eglot-ensure)
+    ) . eglot)
   :custom
   (eglot-auto-display-help-buffer nil)
   (eglot-connect-timeout 100)
   (eglot-sync-connect 30)
   (eglot-extend-to-xref t)
   :config
-  (add-to-list 'eglot-server-programs '(elixir-mode "/home/mpm/src/elixir-ls/release/language_server.sh"))
-  (add-to-list 'eglot-server-programs '(elixir-ts-mode "/home/mpm/src/elixir-ls/release/language_server.sh"))
+  (add-to-list 'eglot-server-programs '(elixir-mode "elixir-ls"))
+  (add-to-list 'eglot-server-programs '(elixir-ts-mode "elixir-ls"))
   ;; (add-to-list 'eglot-server-programs '(org-mode "/home/mpm/source/vale-ls/target/release/vale-ls"))
   :bind
   (("M-RET" . eglot-code-actions)
@@ -411,7 +426,7 @@ is loaded dynamiclly"
 (use-package project)
 
 (use-package projectile
-  :after project
+  :after (project)
   :bind-keymap
   ("C-c p" . projectile-command-map)
   :config
