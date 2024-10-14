@@ -345,6 +345,9 @@ is loaded dynamiclly"
   (exec-path-from-shell-copy-env "KERL_CONFIGURE_OPTIONS")
   (exec-path-from-shell-initialize))
 
+(use-package envrc
+  :hook (after-init . envrc-global-mode))
+
 (use-package peep-dired
   :after dired
   :bind (:map dired-mode-map
