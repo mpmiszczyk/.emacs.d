@@ -100,6 +100,14 @@ is loaded dynamiclly"
   ;; normal yank will act as smart one in org-mode
   (setq org-yank-adjusted-subtrees t))
 
+(use-package org-download
+  :after org-roam
+  :custom
+  (org-download-method 'attach)
+  ;; (org-download-image-dir (expand-file-name "images" org-roam-directory))
+  (org-download-screenshot-method "flameshot gui -p %s")
+  )
+
 (use-package org-journal
   :after (org)
   :custom
@@ -564,6 +572,29 @@ is loaded dynamiclly"
   (setq magit-diff-paint-whitespace nil)
   (setq magit-diff-highlight-hunk-body nil)
   (setq magit-diff-highlight-hunk-region-functions nil)
+  )
+
+
+(use-package llm
+  :init
+  (require 'llm-gemini)
+  :config
+  (setopt llm-gemini-provider
+          (make-llm-gemini :key (auth-info-password
+                                 (car (auth-source-search
+                                       :host "generativelanguage.googleapis.com"
+                                       :user "apikey")))
+                           :chat-model "gemini-1.5-flash-latest"))
+  :custom
+  (llm-warn-on-nonfree nil))
+
+(use-package magit-gptcommit
+  :demand t
+  :after (llm magit)
+  :bind (:map git-commit-mode-map
+              ("C-c C-g" . magit-gptcommit-commit-accept))
+  :custom
+  (magit-gptcommit-llm-provider llm-gemini-provider)
   )
 
 ;; disabled it because the 
