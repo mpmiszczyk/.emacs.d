@@ -302,10 +302,26 @@ is loaded dynamiclly"
          )
   )
 
+
 (use-package gptel
+  :init
+  (defun gptel-apikey-from-auth-source (host user)
+    "Return a function that retrieves the API key for the given HOST and USER."
+    (let ((entry (car (auth-source-search :host host :user user))))
+      (when entry
+        (funcall (plist-get entry :secret))))
+    )
+
   :custom
-  (gptel-default-mode 'org-mode)
-  )
+  (gptel-default-mode 'markdown)
+  :config
+  (setq gptel-backend
+        (gptel-make-anthropic "Claude"
+          :key (gptel-apikey-from-auth-source "api.anthropic.com" "mpm")
+          :stream t
+          )
+        ))
+
 
 ;; (use-package nord-theme)
 ;; (use-package zenburn-theme)
