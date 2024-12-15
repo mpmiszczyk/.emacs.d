@@ -302,6 +302,16 @@ is loaded dynamiclly"
          )
   )
 
+(use-package shell-maker)
+
+(use-package copilot-chat
+  :straight (:host github :repo "chep/copilot-chat.el" :files ("*.el"))
+  :after (request org markdown-mode shell-maker)
+  :config
+  (copilot-chat-backend 'curl)
+  (copilot-chat-frontend 'shell-maker)
+  )
+
 
 (use-package gptel
   :init
@@ -313,7 +323,7 @@ is loaded dynamiclly"
     )
 
   :custom
-  (gptel-default-mode 'markdown)
+  (gptel-default-mode 'markdown-mode)
   :config
   (setq gptel-backend
         (gptel-make-anthropic "Claude"
@@ -418,8 +428,7 @@ is loaded dynamiclly"
   :after (projectile project)
   :commands (eglot eglot-ensures)
   :hook
-  ((org-mode
-    elixir-mode
+  ((elixir-mode
     elixir-ts-mode
     heex-ts-mode
     ruby-mode
