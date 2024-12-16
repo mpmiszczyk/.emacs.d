@@ -689,16 +689,7 @@ is loaded dynamiclly"
   :custom
   (org-image-actual-width nil))
 
-(use-package elfeed)
 (use-package s)
-
-(use-package elfeed-org
-  :config
-  (setq rmh-elfeed-org-files (list "~/.emacs.d/lisp/elfeed.org"))
-  :init
-  (elfeed-org)
-  :after (elfeed s)
-  )
 
 (use-package rainbow-delimiters
   :hook ((prog-mode) . rainbow-delimiters-mode))
