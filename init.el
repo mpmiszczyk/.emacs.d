@@ -299,6 +299,7 @@ is loaded dynamiclly"
   :straight (:host github :repo "zerolfx/copilot.el" :files ("dist" "*.el"))
   :ensure t
   :custom
+  (copilot-max-char 500000)
   (copilot-indent-offset-warning-disable t)
   (qcopilot-idle-delay 5)
   :hook ((prog-mode) . copilot-mode)
