@@ -334,12 +334,17 @@ is loaded dynamiclly"
   :custom
   (gptel-default-mode 'markdown-mode)
   :config
-  (setq gptel-backend
-        (gptel-make-anthropic "Claude"
-          :key (gptel-apikey-from-auth-source "api.anthropic.com" "mpm")
-          :stream t
-          )
-        ))
+  (setq  gptel-backend
+         (gptel-make-gemini "Gemini"
+                 :key (gptel-apikey-from-auth-source "generativelanguage.googleapis.com" "apikey")
+                 :stream t))
+  ;; (setq gptel-backend
+  ;;       (gptel-make-anthropic "Claude"
+  ;;         :key (gptel-apikey-from-auth-source "api.anthropic.com" "apikey")
+  ;;         :stream t
+  ;;         )
+  ;;       )
+  )
 
 
 ;; (use-package nord-theme)
