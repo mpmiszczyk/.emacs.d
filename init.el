@@ -468,7 +468,7 @@ is loaded dynamiclly"
 (use-package project)
 
 (use-package projectile
-  :after (project)
+  :after (project transient)
   :bind-keymap
   ("C-c p" . projectile-command-map)
   :config
@@ -568,7 +568,7 @@ is loaded dynamiclly"
 ;;   :hook (projectile-mode . counsel-projectile-mode))
 
 (use-package magit
-  :after (project)
+  :after (project transient)
   :bind
   (("M-M" . magit-status) ;; depreciated
    ("C-x m" . magit-status))
