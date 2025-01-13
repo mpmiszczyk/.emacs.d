@@ -22,3 +22,6 @@
 /.org-id-locations
 /org-roam.db
 /projectile-bookmarks.eld
+/.cache/
+/.chatgpt-shell.el
+/eln-cache/
