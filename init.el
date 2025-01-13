@@ -1,3 +1,12 @@
+(setq straight-bootstrap-use-nongnu-elpa nil)
+
+(setq straight-recipe-overrides
+      '((nil (nongnu-elpa :type git
+                          :repo "https://github.com/emacsmirror/nongnu_elpa.git"
+                          :depth (full single-branch)
+                          :local-repo "nongnu-elpa"
+                          :build nil))))
+
 (defvar bootstrap-version)
 (let ((bootstrap-file
        (expand-file-name
@@ -25,9 +34,11 @@
   (straight-built-in-pseudo-packages '(emacs nadvice python image-mode project flymake xref))
   (straight-use-package-by-default t)
   (straight-allow-recipe-inheritance t)
-  (package-enable-at-startup nil))
+  (package-enable-at-startup nil)
+  (straight-bootstrap-use-nongnu-elpa nil)
+  )
 
-(straight-use-package 'org)
+(straight-use-package '(org :type git :host github :repo "bzg/org-mode"))
 (use-package org
   :bind (("C-c t n" . org-toggle-narrow-to-subtree)
          ("C-c l" . org-store-link)
