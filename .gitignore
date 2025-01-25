@@ -25,3 +25,4 @@
 /.cache/
 /.chatgpt-shell.el
 /eln-cache/
+/codeium/codeium_language_server
