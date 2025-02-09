@@ -138,8 +138,6 @@ is loaded dynamiclly"
 (use-package el-patch
   :straight (el-patch :type git :host github :repo "radian-software/el-patch"))
 
-
-
 (use-package treesit
   :straight (:type built-in)
   :preface
@@ -211,7 +209,6 @@ is loaded dynamiclly"
   ;; Amend this to the directory where you keep Combobulate's source
   ;; code.
   )
-
 
 (setq custom-file (make-temp-file "emacs-custom"))
 (load custom-file)
@@ -323,64 +320,63 @@ is loaded dynamiclly"
          )
   )
 
-;; ;; we recommend using use-package to organize your init.el
-;; (use-package codeium
-;;     ;; if you use straight
-;;     :straight '(:type git :host github :repo "Exafunction/codeium.el")
-;;     ;; otherwise, make sure that the codeium.el file is on load-path
+(use-package codeium
+    ;; if you use straight
+    :straight '(:type git :host github :repo "Exafunction/codeium.el")
+    ;; otherwise, make sure that the codeium.el file is on load-path
 
-;;     :init
-;;     ;; use globally
-;;     (add-to-list 'completion-at-point-functions #'codeium-completion-at-point)
-;;     ;; or on a hook
-;;     ;; (add-hook 'python-mode-hook
-;;     ;;     (lambda ()
-;;     ;;         (setq-local completion-at-point-functions '(codeium-completion-at-point))))
+    :init
+    ;; use globally
+    (add-to-list 'completion-at-point-functions #'codeium-completion-at-point)
+    ;; or on a hook
+    ;; (add-hook 'python-mode-hook
+    ;;     (lambda ()
+    ;;         (setq-local completion-at-point-functions '(codeium-completion-at-point))))
 
-;;     ;; if you want multiple completion backends, use cape (https://github.com/minad/cape):
-;;     ;; (add-hook 'python-mode-hook
-;;     ;;     (lambda ()
-;;     ;;         (setq-local completion-at-point-functions
-;;     ;;             (list (cape-capf-super #'codeium-completion-at-point #'lsp-completion-at-point)))))
-;;     ;; an async company-backend is coming soon!
+    ;; if you want multiple completion backends, use cape (https://github.com/minad/cape):
+    ;; (add-hook 'python-mode-hook
+    ;;     (lambda ()
+    ;;         (setq-local completion-at-point-functions
+    ;;             (list (cape-capf-super #'codeium-completion-at-point #'lsp-completion-at-point)))))
+    ;; an async company-backend is coming soon!
 
-;;     ;; codeium-completion-at-point is autoloaded, but you can
-;;     ;; optionally set a timer, which might speed up things as the
-;;     ;; codeium local language server takes ~0.2s to start up
-;;     ;; (add-hook 'emacs-startup-hook
-;;     ;;  (lambda () (run-with-timer 0.1 nil #'codeium-init)))
+    ;; codeium-completion-at-point is autoloaded, but you can
+    ;; optionally set a timer, which might speed up things as the
+    ;; codeium local language server takes ~0.2s to start up
+    ;; (add-hook 'emacs-startup-hook
+    ;;  (lambda () (run-with-timer 0.1 nil #'codeium-init)))
 
-;;     ;; :defer t ;; lazy loading, if you want
-;;     (setq use-dialog-box nil);; do not use popup boxes
+    ;; :defer t ;; lazy loading, if you want
+    (setq use-dialog-box nil);; do not use popup boxes
 
-;;     ;; get codeium status in the modeline
-;;     (setq codeium-mode-line-enable
-;;         (lambda (api) (not (memq api '(CancelRequest Heartbeat AcceptCompletion)))))
-;;     (add-to-list 'mode-line-format '(:eval (car-safe codeium-mode-line)) t)
-;;     ;; alternatively for a more extensive mode-line
-;;     ;; (add-to-list 'mode-line-format '(-50 "" codeium-mode-line) t)
+    ;; get codeium status in the modeline
+    (setq codeium-mode-line-enable
+        (lambda (api) (not (memq api '(CancelRequest Heartbeat AcceptCompletion)))))
+    (add-to-list 'mode-line-format '(:eval (car-safe codeium-mode-line)) t)
+    ;; alternatively for a more extensive mode-line
+    ;; (add-to-list 'mode-line-format '(-50 "" codeium-mode-line) t)
 
-;;     ;; use M-x codeium-diagnose to see apis/fields that would be sent to the local language server
-;;     (setq codeium-api-enabled
-;;         (lambda (api)
-;;             (memq api '(GetCompletions Heartbeat CancelRequest GetAuthToken RegisterUser auth-redirect AcceptCompletion))))
-;;     ;; you can also set a config for a single buffer like this:
-;;     ;; (add-hook 'python-mode-hook
-;;     ;;     (lambda ()
-;;     ;;         (setq-local codeium/editor_options/tab_size 4)))
+    ;; use M-x codeium-diagnose to see apis/fields that would be sent to the local language server
+    (setq codeium-api-enabled
+        (lambda (api)
+            (memq api '(GetCompletions Heartbeat CancelRequest GetAuthToken RegisterUser auth-redirect AcceptCompletion))))
+    ;; you can also set a config for a single buffer like this:
+    ;; (add-hook 'python-mode-hook
+    ;;     (lambda ()
+    ;;         (setq-local codeium/editor_options/tab_size 4)))
 
-;;     ;; You can overwrite all the codeium configs!
-;;     ;; for example, we recommend limiting the string sent to codeium for better performance
-;;     ;; (defun my-codeium/document/text ()
-;;     ;;     (buffer-substring-no-properties (max (- (point) 3000) (point-min)) (min (+ (point) 1000) (point-max))))
-;;     ;; ;; if you change the text, you should also change the cursor_offset
-;;     ;; ;; warning: this is measured by UTF-8 encoded bytes
-;;     ;; (defun my-codeium/document/cursor_offset ()
-;;     ;;     (codeium-utf8-byte-length
-;;     ;;         (buffer-substring-no-properties (max (- (point) 3000) (point-min)) (point))))
-;;     ;; (setq codeium/document/text 'my-codeium/document/text)
-;;     ;; (setq codeium/document/cursor_offset 'my-codeium/document/cursor_offset)
-;;     )
+    ;; You can overwrite all the codeium configs!
+    ;; for example, we recommend limiting the string sent to codeium for better performance
+    ;; (defun my-codeium/document/text ()
+    ;;     (buffer-substring-no-properties (max (- (point) 3000) (point-min)) (min (+ (point) 1000) (point-max))))
+    ;; ;; if you change the text, you should also change the cursor_offset
+    ;; ;; warning: this is measured by UTF-8 encoded bytes
+    ;; (defun my-codeium/document/cursor_offset ()
+    ;;     (codeium-utf8-byte-length
+    ;;         (buffer-substring-no-properties (max (- (point) 3000) (point-min)) (point))))
+    ;; (setq codeium/document/text 'my-codeium/document/text)
+    ;; (setq codeium/document/cursor_offset 'my-codeium/document/cursor_offset)
+    )
 
 (use-package shell-maker)
 
@@ -460,9 +456,9 @@ is loaded dynamiclly"
   :straight '(envrc :no-clone t) ;; installed trough home-manager
   :hook (after-init . envrc-global-mode))
 
-(use-package inheritenv
-  :after (envrc)
-  :hook (after-init . inheritenv-global-mode))
+;; (use-package inheritenv
+;;   :straight (inheritenv :type git :host github :repo "purcell/inheritenv"))
+;;  :hook (prog-mode . inheritenv-apply))
 
 (use-package peep-dired
   :after dired
@@ -479,9 +475,9 @@ is loaded dynamiclly"
 (use-package markdown-mode)
 
 (use-package erlang
+  :straight '(erlang :no-clone t) ;; installed trough home-manager
   :config
-  (setq erlang-indent-level 2)
-  )
+  (setq erlang-indent-level 2))
 
 (use-package elixir-mode)
 
@@ -518,27 +514,27 @@ is loaded dynamiclly"
   :straight '(eglot :no-clone t) ;; installed trough home-manager
   :after (projectile project)
   :commands (eglot eglot-ensures)
-  :hook
-  ((elixir-mode
-    elixir-ts-mode
-    heex-ts-mode
-    ruby-mode
-    ruby-ts-mode
-    typescript-mode
-    typescript-ts-mode
-    tsx-ts-mode
-    ) . eglot)
+  :hook ((elixir-mode
+          elixir-ts-mode
+          heex-ts-mode
+          ruby-mode
+          ruby-ts-mode
+          typescript-mode
+          typescript-ts-mode
+          tsx-ts-mode
+          ) . eglot-ensure)
   :custom
   (eglot-auto-display-help-buffer nil)
   (eglot-connect-timeout 100)
   (eglot-sync-connect 30)
   (eglot-extend-to-xref t)
   :config
-  (add-to-list 'eglot-server-programs '(elixir-mode "elixir-ls"))
-  (add-to-list 'eglot-server-programs '(elixir-ts-mode "elixir-ls"))
-  ;; (add-to-list 'eglot-server-programs '(elixir-mode . ("nextls" "--stdio")))
-  ;; (add-to-list 'eglot-server-programs '(elixir-ts-mode . ("nextls" "--stdio")))
-  ;; (add-to-list 'eglot-server-programs '(org-mode "/home/mpm/source/vale-ls/target/release/vale-ls"))
+  (add-to-list 'eglot-server-programs
+               `((elixir-ts-mode heex-ts-mode elixir-mode) .
+                 ("elixir-ls")))
+  ;; (add-to-list 'eglot-server-programs
+  ;;    `((elixir-ts-mode heex-ts-mode elixir-mode) .
+  ;;      ("nextls" "--stdio=true" :initializationOptions (:experimental (:completions (:enable t))))))
   :bind
   (("M-RET" . eglot-code-actions)
    ("C-x C-<return>" . eglot-code-actions))
@@ -705,14 +701,14 @@ is loaded dynamiclly"
   :custom
   (llm-warn-on-nonfree nil))
 
-(use-package magit-gptcommit
-  :demand t
-  :after (llm magit)
-  :bind (:map git-commit-mode-map
-              ("C-c C-g" . magit-gptcommit-commit-accept))
-  :custom
-  (magit-gptcommit-llm-provider llm-gemini-provider)
-  )
+;; (use-package magit-gptcommit
+;;   :demand t
+;;   :after (llm magit)
+;;   :bind (:map git-commit-mode-map
+;;               ("C-c C-g" . magit-gptcommit-commit-accept))
+;;   :custom
+;;   (magit-gptcommit-llm-provider llm-gemini-provider)
+;;   )
 
 (use-package git-timemachine)
 
