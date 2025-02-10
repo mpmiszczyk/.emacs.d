@@ -540,6 +540,30 @@ is loaded dynamiclly"
    ("C-x C-<return>" . eglot-code-actions))
   )
 
+(use-package transient
+  :ensure t
+  :config
+  (load-library "transient") ;; somehow the build-in transient is
+                             ;; being loaded :/ so we need to re-load
+                             ;; it here
+  )
+
+(use-package magit
+  ;; :straight '(magit :no-clone t) ;; installed trough home-manager
+  :after (project transient)
+  :bind
+  (("M-M" . magit-status) ;; depreciated
+   ("C-x m" . magit-status))
+  :config
+  (setq magit-list-refs-sortby "-committerdate")
+  (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1)
+  (setq magit-diff-paint-whitespace nil)
+  (setq magit-diff-highlight-hunk-body nil)
+  (setq magit-diff-highlight-hunk-region-functions nil)
+  )
+
+
+
 (use-package project)
 
 (use-package projectile
@@ -672,20 +696,6 @@ is loaded dynamiclly"
 ;; (use-package counsel-projectile
 ;;   :after (counsel projectile)
 ;;   :hook (projectile-mode . counsel-projectile-mode))
-
-(use-package magit
-  :straight '(magit :no-clone t) ;; installed trough home-manager
-  :after (project transient)
-  :bind
-  (("M-M" . magit-status) ;; depreciated
-   ("C-x m" . magit-status))
-  :config
-  (setq magit-list-refs-sortby "-committerdate")
-  (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1)
-  (setq magit-diff-paint-whitespace nil)
-  (setq magit-diff-highlight-hunk-body nil)
-  (setq magit-diff-highlight-hunk-region-functions nil)
-  )
 
 
 (use-package llm
