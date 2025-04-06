@@ -591,7 +591,25 @@ is loaded dynamiclly"
 (use-package yasnippet
   :hook (elixir-mode))
 
-(use-package exunit)
+(use-package exunit
+  :after (projectile elixir-mode)
+  :hook (elixir-mode . exunit-mode)
+  :bind-keymap ("C-c p e" . exunit-mode-map)
+  :bind (:map exunit-mode-map
+              ("v" . exunit-verify)
+              ("a" . exunit-verify-all)
+              ("u" . exunit-verify-all-in-umbrella)
+              ("r" . exunit-rerun)
+              ("s" . exunit-verify-single)
+              )
+  
+  :custom
+  (add-to-list 'display-buffer-alist
+   '(("\\*exunit-compilation\\*"        ; Match buffer name
+      (display-buffer-at-bottom)       ; Display at the bottom
+      (window-height . 0.3))))        ; Set height to 30% of the frame
+
+  )
 
 (use-package ispell
   :custom
