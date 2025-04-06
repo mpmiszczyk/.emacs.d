@@ -210,7 +210,10 @@ is loaded dynamiclly"
          (yaml-ts-mode . combobulate-mode)
          (json-ts-mode . combobulate-mode)
          (typescript-ts-mode . combobulate-mode)
-         (tsx-ts-mode . combobulate-mode))
+         (tsx-ts-mode . combobulate-mode)
+         (elixir-ts-mode . combobulate-mode)
+         (nix-ts-mode . combobulate-mode)
+         )
   ;; Amend this to the directory where you keep Combobulate's source
   ;; code.
   )
