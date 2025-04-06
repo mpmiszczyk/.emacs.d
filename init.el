@@ -138,6 +138,9 @@ is loaded dynamiclly"
 (use-package el-patch
   :straight (el-patch :type git :host github :repo "radian-software/el-patch"))
 
+(use-package nix-ts-mode
+  :mode "\\.nix\\'")
+
 (use-package treesit
   :straight (:type built-in)
   :preface
@@ -152,6 +155,7 @@ is loaded dynamiclly"
                (yaml "https://github.com/ikatyang/tree-sitter-yaml")
                (elixir "https://github.com/elixir-lang/tree-sitter-elixir")
                (heex "https://github.com/phoenixframework/tree-sitter-heex")
+               (nix "https://github.com/nix-community/tree-sitter-nix")
                ))
       (add-to-list 'treesit-language-source-alist grammar)
       ;; Only install `grammar' if we don't already have it
@@ -173,7 +177,8 @@ is loaded dynamiclly"
                      (js-mode . js-ts-mode)
                      (css-mode . css-ts-mode)
                      (yaml-mode . yaml-ts-mode)
-                     (elixir-mode . elixir-ts-mode)))
+                     (elixir-mode . elixir-ts-mode)
+                     (nix-mode . nix-ts-mode)))
     (add-to-list 'major-mode-remap-alist mapping))
 
   :config
