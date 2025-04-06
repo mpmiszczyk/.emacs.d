@@ -204,16 +204,15 @@ is loaded dynamiclly"
   ;;
   ;; You can manually enable Combobulate with `M-x
   ;; combobulate-mode'.
-  :hook ((python-ts-mode . combobulate-mode)
-         (js-ts-mode . combobulate-mode)
-         (css-ts-mode . combobulate-mode)
-         (yaml-ts-mode . combobulate-mode)
-         (json-ts-mode . combobulate-mode)
-         (typescript-ts-mode . combobulate-mode)
-         (tsx-ts-mode . combobulate-mode)
-         (elixir-ts-mode . combobulate-mode)
-         (nix-ts-mode . combobulate-mode)
-         )
+  :hook ((python-ts-mode
+          js-ts-mode
+          css-ts-mode
+          yaml-ts-mode
+          json-ts-mode
+          typescript-ts-mode
+          tsx-ts-mode
+          elixir-ts-mode
+          nix-ts-mode) . combobulate-mode)
   ;; Amend this to the directory where you keep Combobulate's source
   ;; code.
   )
@@ -530,6 +529,7 @@ is loaded dynamiclly"
           typescript-mode
           typescript-ts-mode
           tsx-ts-mode
+          nix-ts-mode
           ) . eglot-ensure)
   :custom
   (eglot-auto-display-help-buffer nil)
@@ -538,11 +538,12 @@ is loaded dynamiclly"
   (eglot-extend-to-xref t)
   :config
   (add-to-list 'eglot-server-programs
-               `((elixir-ts-mode heex-ts-mode elixir-mode) .
-                 ("elixir-ls")))
+               `((elixir-ts-mode heex-ts-mode elixir-mode) . ("elixir-ls")))
   ;; (add-to-list 'eglot-server-programs
   ;;    `((elixir-ts-mode heex-ts-mode elixir-mode) .
   ;;      ("nextls" "--stdio=true" :initializationOptions (:experimental (:completions (:enable t))))))
+  (add-to-list 'eglot-server-programs
+               `((nix-ts-mode nix-mode) . ("nixd")))
   :bind
   (("M-RET" . eglot-code-actions)
    ("C-x C-<return>" . eglot-code-actions))
