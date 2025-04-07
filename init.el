@@ -592,15 +592,18 @@ is loaded dynamiclly"
   :hook (elixir-mode))
 
 (use-package exunit
-  :after (projectile elixir-mode)
+  :after (projectile elixir-mode transient)
   :hook (elixir-mode . exunit-mode)
-  :bind-keymap ("C-c p e" . exunit-mode-map)
+  :bind-keymap ("C-c e" . exunit-mode-map)
   :bind (:map exunit-mode-map
+              ("e" . exunit-transient)
               ("v" . exunit-verify)
               ("a" . exunit-verify-all)
               ("u" . exunit-verify-all-in-umbrella)
               ("r" . exunit-rerun)
               ("s" . exunit-verify-single)
+              ("t" . exunit-toggle-file-and-test)
+              ("T" . exunit-toggle-file-and-test)
               )
   
   :custom
