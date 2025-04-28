@@ -530,6 +530,7 @@ is loaded dynamiclly"
           typescript-ts-mode
           tsx-ts-mode
           nix-ts-mode
+          terraform-mode
           ) . eglot-ensure)
   :custom
   (eglot-auto-display-help-buffer nil)
@@ -608,10 +609,29 @@ is loaded dynamiclly"
   
   :custom
   (add-to-list 'display-buffer-alist
-   '(("\\*exunit-compilation\\*"        ; Match buffer name
-      (display-buffer-at-bottom)       ; Display at the bottom
-      (window-height . 0.3))))        ; Set height to 30% of the frame
+               '(("\\*exunit-compilation\\*"        ; Match buffer name
+                  (display-buffer-at-bottom)       ; Display at the bottom
+                  (window-height . 0.3))))        ; Set height to 30% of the frame
+  (defun exunit-project-root ()
+    "Return the current project root.
 
+     Override the default `projectile-project-root' to return the root of projectile project."
+    (or
+     exunit-project-root
+     (let ((root (projectile-project-root)))
+       (unless root
+         (error "Couldn't locate project root folder.  Make sure the current file is inside a project"))
+       (setq exunit-project-root (expand-file-name root)))))
+  (defun exunit-umbrella-project-root ()
+    "Return the current umbrella root.
+
+Override the default `projectile-project-root' to return the root of projectile project."
+    (or
+     exunit-umbrella-project-root
+     (let ((root (projectile-project-root)))
+       (unless root
+         (error "Couldn't locate umbrella root folder.  Make sure the current file is inside a umbrella project"))
+       (setq exunit-umbrella-project-root (expand-file-name root)))))
   )
 
 (use-package ispell
